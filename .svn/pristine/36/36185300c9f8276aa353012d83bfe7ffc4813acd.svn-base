@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boletim CIMAN</title>
+    <style>
+        .page{
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0 auto;
+            background: white;
+            page-break-after: always;
+            /* box-shadow: 0 10px black; */
+            border: 1px solid black;
+        }
+        body{
+            background: #c4c4c4;
+        }
+    </style>
+</head>
+<body style="margin: 0 auto; text-align: center">
+    
+    <div class="page">
+        <img src="http://queimadas.dgi.inpe.br/queimadas/ciman/static/img/logo_centro_integrado_2017.png" alt="">
+    </div>
+    <div class="page">
+        <h1>Situação da Amazônia Legal no ano</h1>
+        <p>Tabela com a quantidade acumulada de focos do
+                satélite de referência desde o dia 01/jan até {{fim}}</p>
+        <iframe style="height: 400px" src="conteudo/focos_estados_ano.html?{{data_atual}}" frameborder="0"></iframe>
+        <p>Tabela com a quantidade de focos do satélite de referência por dia no mês atual</p>
+        <iframe style="height: 400px;width: 700px" src="conteudo/tabela_mensal.html?{{data_atual}}" frameborder="0"></iframe>
+    </div>
+    <div class="page">
+        <p>Mapa com a quantidadede de focos por estados nas últimas 24h</p>
+        <div style="width: 100%;height: 600px; overflow: hidden;">
+            <div style="height: 490px"> 
+                <img style="margin-top: -250px; width: 100%;" src="conteudo/mapa_estados_aml.png" alt="">
+            </div>
+            <div>
+                <img src="conteudo/legenda48h.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>20 municípios da Amazônia Legal com mais focos no mês atual</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_aml.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Acre</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_AC.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Amazonas</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_AM.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Amapá</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_AP.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Maranhão</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_MA.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Mato Grosso</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_MT.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Pará</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_PA.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Rondônia</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_RO.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Roraima</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_RR.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <div style="height: 920px;width: 770px; margin-left: 10px;">
+            <h2>Quantidade de focos por municípios por dia no mês atual no Estado do Tocantins</h2>
+            <iframe style="height: 790px; width: 100%" src="conteudo/top_20_munic_TO.html?{{data_atual}}" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="page">
+        <h2>Link para download de Shapefile de focos de todos os satélites por estado:</h2>
+        <ul style="text-align: left">
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_ac_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">ac</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_am_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">am</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_ap_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">ap</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_ma_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">ma</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_mt_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">mt</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_pa_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">pa</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_ro_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">ro</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_rr_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">rr</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_to_01a{{data_download}}.shp.zip">Focos no estado do <span style="text-transform: uppercase">to</span> no mês atual</a></li>
+        </ul>
+        <h2>Link para download de CSV de focos de todos os satélites por estado:</h2>
+        <ul style="text-align: left">
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_ac_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">ac</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_am_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">am</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_ap_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">ap</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_ma_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">ma</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_mt_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">mt</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_pa_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">pa</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_ro_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">ro</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_rr_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">rr</span> no mês atual</a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/csv/focos_to_01a{{data_download}}.csv.zip">Focos no estado do <span style="text-transform: uppercase">to</span> no mês atual</a></li>
+        </ul>
+        <h2>Link para download do KML:</h2>
+        <ul style="text-align: left">
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/kml/focos_AMZ_Legal_3dias.kml">KML focos AMZ Legal nos últimos 3 dias</a></li>
+        </ul>
+        <p>*Este link pode ser utilizado na forma de streaming para atualização automática a cada 15 minutos. Veja detalhes na <a href="http://queimadas.dgi.inpe.br/queimadas/portal/videoaulas">página específica de instruções GoogleEarth</a> que ensina passo a passo a fazer esta visualização.</p>
+
+        <h2>Link para download de Shapefile de focos de todos os satélites por estado para o mês completo de {{mes_completo_nome}}:</h2>
+        <ul style="text-align: left">
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_ac_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">ac</span></a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_am_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">am</span></a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_ap_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">ap</span></a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_ma_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">ma</span></a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_mt_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">mt</span></a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_pa_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">pa</span></a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_ro_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">ro</span></a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_rr_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">rr</span></a></li>
+            <li><a href="http://queimadas.dgi.inpe.br/queimadas/portal-static/shapes/focos_to_{{mes_completo}}.zip">Focos no estado do <span style="text-transform: uppercase">to</span></a></li>
+        </ul>
+    </div>
+</body>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121460145-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-121460145-1');
+</script>
+</html>

@@ -1,0 +1,15 @@
+<html><head><meta charset="UTF-8"><head><body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head><meta charset="UTF-8">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title></title>
+  </head>
+ <body style="text-align: center;">
+    <div><img src="focos_estado_mes_atual_mapa.png" alt="focos_estado_mes_atual_mapa.png"></div>
+    <div><img src="http://queimadas.dgi.inpe.br/queimadas/portal-static/legenda.png" alt="legenda"></div>
+</body>
+  </html>
+</body></html>

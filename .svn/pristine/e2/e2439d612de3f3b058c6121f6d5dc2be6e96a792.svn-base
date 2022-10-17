@@ -1,0 +1,195 @@
+<html><head><meta charset="UTF-8"><head><body><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>qtd</th>
+    </tr>
+    <tr>
+      <th>estado</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>MT</th>
+      <td>4220</td>
+    </tr>
+    <tr>
+      <th>MS</th>
+      <td>2046</td>
+    </tr>
+    <tr>
+      <th>RR</th>
+      <td>1648</td>
+    </tr>
+    <tr>
+      <th>RS</th>
+      <td>1060</td>
+    </tr>
+    <tr>
+      <th>PR</th>
+      <td>746</td>
+    </tr>
+    <tr>
+      <th>TO</th>
+      <td>710</td>
+    </tr>
+    <tr>
+      <th>SP</th>
+      <td>678</td>
+    </tr>
+    <tr>
+      <th>SC</th>
+      <td>678</td>
+    </tr>
+    <tr>
+      <th>BA</th>
+      <td>581</td>
+    </tr>
+    <tr>
+      <th>GO</th>
+      <td>486</td>
+    </tr>
+    <tr>
+      <th>MA</th>
+      <td>451</td>
+    </tr>
+    <tr>
+      <th>MG</th>
+      <td>445</td>
+    </tr>
+    <tr>
+      <th>PA</th>
+      <td>433</td>
+    </tr>
+    <tr>
+      <th>AM</th>
+      <td>362</td>
+    </tr>
+    <tr>
+      <th>PI</th>
+      <td>191</td>
+    </tr>
+    <tr>
+      <th>RO</th>
+      <td>176</td>
+    </tr>
+    <tr>
+      <th>PE</th>
+      <td>168</td>
+    </tr>
+    <tr>
+      <th>CE</th>
+      <td>106</td>
+    </tr>
+    <tr>
+      <th>AL</th>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>PB</th>
+      <td>83</td>
+    </tr>
+    <tr>
+      <th>RJ</th>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>SE</th>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>RN</th>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>ES</th>
+      <td>43</td>
+    </tr>
+    <tr>
+      <th>AC</th>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>DF</th>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>AP</th>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+<style>
+.dataframe,.main-table{
+    width: 100%;
+}
+table {border: none;
+}
+.espaco_esquerda {
+    padding-left: 60px;
+}
+
+table tr:nth-child(even) {
+    background-color: #FDF2E3;
+}
+
+table thead{
+    display: none;
+}
+
+table tr {
+    background-color: #FADAAB;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-bottom: 1em;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 0;
+    overflow-y: auto;
+}
+body {
+    margin: 0;
+}
+
+table th:first-child {  
+  padding-left: 100px !important;
+}
+
+table th:first-child {  
+    text-align: left;
+    padding-left: 50px !important;
+    width: 150px;
+}
+table tbody td{  
+    padding-right: 50px;
+}
+
+table thead tr:last-child {  
+  display:none;
+}
+
+table thead tr:last-child {  
+  display:none;
+}
+
+table th{  
+  padding-left: 60px;
+  width: 100px;
+}
+
+*{
+text-align: right;
+border: 0px;
+}
+</style>
+
+</body></html>

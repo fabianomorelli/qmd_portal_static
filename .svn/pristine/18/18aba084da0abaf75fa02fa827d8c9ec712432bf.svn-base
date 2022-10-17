@@ -1,0 +1,31 @@
+
+<html>
+<head><meta charset="UTF-8"><meta charset="UTF-8"><head><meta charset="UTF-8"><body>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart(dados, tipo, container) {
+  
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Element');
+  data.addColumn('number', 'Focos');
+  data.addRows( [['BARÃO DE MELGAÇO (MATO GROSSO)', 759.0], ['SÃO FÉLIX DO XINGU (PARÁ)', 600.0], ['ALTAMIRA (PARÁ)', 581.0], ['POCONÉ (MATO GROSSO)', 411.0], ['CÁCERES (MATO GROSSO)', 318.0], ['COLNIZA (MATO GROSSO)', 270.0], ['NOVO PROGRESSO (PARÁ)', 266.0], ['SANTO ANTÔNIO DO LEVERGER (MATO GROSSO)', 264.0], ['ARIPUANÃ (MATO GROSSO)', 255.0], ['APUÍ (AMAZONAS)', 243.0]]);
+
+  var options = {
+    chart: {
+      title: 'Focos de incêndio',
+      subtitle: 'Focos detectados pelo Satélite de Referência',      
+    }
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById("chart_paises"));
+  chart.draw(data, options);
+}
+</script>
+ <div id="chart_paises" style="width: 100%; height: 100%;"></div>
+</body>
+</html>

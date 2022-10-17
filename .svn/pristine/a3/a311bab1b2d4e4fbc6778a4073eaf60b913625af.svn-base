@@ -1,0 +1,45 @@
+
+            <html><head><meta charset="UTF-8"></head>
+            <body>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {packages: ['corechart'], 'language': 'pt'});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart(dados, tipo, container) {
+              var data = new google.visualization.DataTable();
+              data.addColumn('string', 'Ano');
+              data.addColumn('number', 'Focos');
+              data.addRows( [['1998', 123896], ['1999', 134612], ['2000', 101530], ['2001', 145484], ['2002', 321416], ['2003', 341239], ['2004', 380446], ['2005', 362566], ['2006', 249184], ['2007', 393915], ['2008', 211933], ['2009', 155104], ['2010', 319386], ['2011', 158102], ['2012', 217238], ['2013', 128149], ['2014', 175900], ['2015', 216782], ['2016', 184218], ['2017', 207511], ['2018', 132872], ['2019', 197634], ['2020', 15606]]);
+
+              var options = {
+                chart: {
+                  title: '',
+                },
+                width: 900,
+                height: 450,
+                legend: { position: "none" },
+                focusTarget: 'category',
+                hAxis: {
+                  ticks: 1,
+                  slantedText: true,
+                  slantedTextAngle: 45 // here you can even use 180 
+                },
+                colors: ['#CC0000', '#FF6600', '#FFCC00']
+              };
+
+              var chart = new google.visualization.ColumnChart(document.getElementById("serie_historica_paises"));
+              chart.draw(data, options);
+            }
+            </script>
+            <div>
+                <center>
+                    <div style="width: 900px">
+                        <center><div style='font-family: "open_sansregular", Arial, Helvetica, sans-serif;'><big>Série histórica do país: <b>Brasil</b><big></big></big></center>
+                        <center><div id="serie_historica_paises"></div></center>
+                    </div>
+                </center>
+            </div>
+            </body>
+            </html>
+    

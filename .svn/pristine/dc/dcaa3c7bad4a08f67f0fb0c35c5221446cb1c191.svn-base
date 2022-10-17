@@ -1,0 +1,112 @@
+<html><head><meta charset="UTF-8"><head><body><h3 style="text-align:center;">Quantidade de focos por biomas do Brasil nas últimas 48h</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>qtd</th>
+    </tr>
+    <tr>
+      <th>bioma</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Mata Atlântica</th>
+      <td>95</td>
+    </tr>
+    <tr>
+      <th>Cerrado</th>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>Amazônia</th>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>Pampa</th>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>Pantanal</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>Caatinga</th>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+<style>
+.dataframe,.main-table{
+    width: 100%;
+}
+table {
+  border: none;
+  }
+.espaco_esquerda {
+    padding-left: 60px;
+}
+
+table tr:nth-child(even) {
+    background-color: #FDF2E3;
+}
+
+table thead{
+    display: none;
+}
+
+table tr {
+    background-color: #FADAAB;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-bottom: 1em;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 0;
+    overflow-y: auto;
+}
+body {
+    margin: 0;
+}
+
+table th:first-child {  
+  padding-left: 100px !important;
+}
+
+table th:first-child {  
+    text-align: left;
+    padding-left: 50px !important;
+    width: 150px;
+}
+table tbody td{  
+    padding-right: 50px;
+}
+
+table thead tr:last-child {  
+  display:none;
+}
+
+table thead tr:last-child {  
+  display:none;
+}
+
+table th{  
+  padding-left: 60px;
+  width: 100px;
+}
+
+*{
+text-align: right;
+border: 0px;
+}
+</style>
+
+</body></html>

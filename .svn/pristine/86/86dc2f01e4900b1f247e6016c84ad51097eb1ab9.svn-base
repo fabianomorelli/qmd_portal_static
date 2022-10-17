@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source /srv/www/queimadas.dgi.inpe.br/apps/boletim_op_aml/env/bin/activate
+
+cd /srv/www/queimadas.dgi.inpe.br/apps/portal-static-scripts/monitoramento_aml/
+
+python monitoramento_aml.py

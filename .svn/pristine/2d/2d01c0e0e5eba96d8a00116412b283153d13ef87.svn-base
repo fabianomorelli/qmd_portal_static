@@ -1,0 +1,127 @@
+<html><head><meta charset="UTF-8"><meta charset="UTF-8"><head><meta charset="UTF-8"><body><h3 style="text-align:center;">Quantidade de focos por municípios do Brasil no mês de 01/Set até 07/Set</h3><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>qtd</th>
+    </tr>
+    <tr>
+      <th>municipio</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>BARÃO DE MELGAÇO (MATO GROSSO)</th>
+      <td>759</td>
+    </tr>
+    <tr>
+      <th>SÃO FÉLIX DO XINGU (PARÁ)</th>
+      <td>600</td>
+    </tr>
+    <tr>
+      <th>ALTAMIRA (PARÁ)</th>
+      <td>581</td>
+    </tr>
+    <tr>
+      <th>POCONÉ (MATO GROSSO)</th>
+      <td>411</td>
+    </tr>
+    <tr>
+      <th>CÁCERES (MATO GROSSO)</th>
+      <td>318</td>
+    </tr>
+    <tr>
+      <th>COLNIZA (MATO GROSSO)</th>
+      <td>270</td>
+    </tr>
+    <tr>
+      <th>NOVO PROGRESSO (PARÁ)</th>
+      <td>266</td>
+    </tr>
+    <tr>
+      <th>SANTO ANTÔNIO DO LEVERGER (MATO GROSSO)</th>
+      <td>264</td>
+    </tr>
+    <tr>
+      <th>ARIPUANÃ (MATO GROSSO)</th>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>APUÍ (AMAZONAS)</th>
+      <td>243</td>
+    </tr>
+  </tbody>
+</table>
+<style>
+.dataframe,.main-table{
+    width: 100%;
+}
+table {border: none;
+}
+.espaco_esquerda {
+    padding-left: 60px;
+}
+
+table tr:nth-child(even) {
+    background-color: #FDF2E3;
+}
+
+table thead{
+    display: none;
+}
+
+table tr {
+    background-color: #FADAAB;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-bottom: 1em;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 0;
+    overflow-y: auto;
+}
+body {
+    margin: 0;
+}
+
+table th:first-child {  
+  padding-left: 100px !important;
+}
+
+table th:first-child {  
+    text-align: left;
+    padding-left: 50px !important;
+    width: 150px;
+}
+table tbody td{  
+    padding-right: 50px;
+}
+
+table thead tr:last-child {  
+  display:none;
+}
+
+table thead tr:last-child {  
+  display:none;
+}
+
+table th{  
+  padding-left: 60px;
+  width: 100px;
+}
+
+*{
+text-align: right;
+border: 0px;
+}
+</style>
+
+</body></html>

@@ -1,0 +1,31 @@
+
+<html>
+<head><meta charset="UTF-8"><head><body>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart(dados, tipo, container) {
+  
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Element');
+  data.addColumn('number', 'Focos');
+  data.addRows( [['CORUMBÁ (MATO GROSSO DO SUL)', 1402], ['POCONÉ (MATO GROSSO)', 372], ['RORAINÓPOLIS (RORAIMA)', 248], ['NOVA MARINGÁ (MATO GROSSO)', 241], ['BRASNORTE (MATO GROSSO)', 179], ['NORMANDIA (RORAIMA)', 166], ['PACARAIMA (RORAIMA)', 166], ['CARACARAÍ (RORAIMA)', 158], ['BOA VISTA (RORAIMA)', 144], ['QUERÊNCIA (MATO GROSSO)', 144]]);
+
+  var options = {
+    chart: {
+      title: 'Focos de incêndio',
+      subtitle: 'Focos detectados pelo Satélite de Referência',      
+    }
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById("chart_paises"));
+  chart.draw(data, options);
+}
+</script>
+<div id="chart_paises" style="width: 100%; height: 100%;"></div>
+</body>
+</html>

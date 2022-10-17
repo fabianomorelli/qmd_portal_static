@@ -1,0 +1,45 @@
+
+            <html><head><meta charset="UTF-8"></head>
+            <body>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {packages: ['corechart'], 'language': 'pt'});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart(dados, tipo, container) {
+              var data = new google.visualization.DataTable();
+              data.addColumn('string', 'Mês');
+              data.addColumn('number', new Date().getFullYear().toString());
+              data.addColumn('number', "Máx");
+              data.addColumn('number', "Méd");
+              data.addColumn('number', "Mín");
+
+              data.addRows([['Jan', 66.0, 191, 55.0, 9], ['Fev', 57.0, 106, 28.0, 7], ['Mar', 58.0, 32, 15.0, 2], ['Abr', 37.0, 76, 22.0, 2], ['Mai', 12.0, 54, 21.0, 6], ['Jun', 0.0, 106, 26.0, 4]]);
+
+              var options = {
+                title: '',
+                vAxis: { title: 'N° Focos' },
+                hAxis: { title: 'Mês' },
+                seriesType: 'bars',
+                focusTarget: 'category',
+                bar: { groupWidth: 10},
+                pointSize: 3,
+                series: { 1: { type: 'line' }, 2: { type: 'line', visibleInLegend: true }, 3: { type: 'line', visibleInLegend: true } },
+                width: 900,
+                height: 450
+              };
+              var chart = new google.visualization.ComboChart(document.getElementById('comparativo_historico_paises'));
+              chart.draw(data, options);
+              }
+            </script>
+            <div>
+                <center>
+                    <div style="width: 900px">
+                        <center><div style='font-family: "open_sansregular", Arial, Helvetica, sans-serif;'><big>Comparativo 1º semestre do país: <b>Equador</b><big></big></big></center>
+                        <center><div id="comparativo_historico_paises"></div></center>
+                    </div>
+                </center>
+            </div>
+            </body>
+            </html>
+    

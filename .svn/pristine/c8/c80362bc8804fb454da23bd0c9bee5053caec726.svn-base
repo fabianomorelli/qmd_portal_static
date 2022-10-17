@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Situação atual</title>
+</head>
+<body>
+    <h1>Situação atual</h1>
+    <ul>
+      <li>Tabela anual comparativa de países - últimos anos no intervalo de 01/Janeiro até ontem</li>
+      <ul>
+        <li><a target="_blank" href="focos_paises_anual_7anos_titulo.html">Últimos anos</a></li>
+        <li><a target="_blank" href="focos_paises_anual_estendida_titulo.html">Todos os anos</a></li>
+      </ul>
+    </ul>
+    <ul>
+      <li>Tabela anual comparativa de estados do Brasil - últimos anos no intervalo de 01/Jan até ontem</li>
+      <ul>
+        <li><a target="_blank" href="focos_estados_anual_7anos_titulo.html">Últimos anos</a></li>
+        <li><a target="_blank" href="focos_estados_anual_estendida_titulo.html">Todos os anos</a></li>
+      </ul>
+    </ul>
+    <hr>
+    <ul>
+      <li>País</li>
+      <ul>
+        <li>Anual</li>
+        <ul>
+            <li><a target="_blank" href="focos_paises_ano_atual_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_paises_ano_atual_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_paises_ano_atual_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+            <li><a target="_blank" href="focos_paises_ano_atual_mapa_titulo.html">Visualizar mapa</a></li>
+        </ul>
+        <li>Mensal</li>
+        <ul>
+            <li><a target="_blank" href="focos_paises_mes_atual_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_paises_mes_atual_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_paises_mes_atual_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+            <li><a target="_blank" href="focos_paises_mes_atual_mapa_titulo.html">Visualizar mapa</a></li>
+        </ul>
+        <li>48H</li>
+        <ul>
+            <li><a target="_blank" href="focos_paises_48h_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_paises_48h_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_paises_48h_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+            <li><a target="_blank" href="focos_paises_48h_mapa_titulo.html">Visualizar mapa</a></li>
+        </ul>
+      </ul>
+    </ul>
+    <hr>
+    <ul>
+      <li>Estado</li>
+      <ul>
+        <li>Anual</li>
+        <ul>
+            <li><a target="_blank" href="focos_estado_ano_atual_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_estado_ano_atual_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_estado_ano_atual_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+            <li><a target="_blank" href="focos_estado_ano_atual_mapa_titulo.html">Visualizar mapa</a></li>
+        </ul>
+        <li>Mensal</li>
+        <ul>
+            <li><a target="_blank" href="focos_estado_mes_atual_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_estado_mes_atual_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_estado_mes_atual_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+            <li><a target="_blank" href="focos_estado_mes_atual_mapa_titulo.html">Visualizar mapa</a></li>
+        </ul>
+        <li>48H</li>
+        <ul>
+            <li><a target="_blank" href="focos_estado_48h_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_estado_48h_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_estado_48h_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+            <li><a target="_blank" href="focos_estado_48h_mapa_titulo.html">Visualizar mapa</a></li>
+        </ul>
+      </ul>
+    </ul>
+    <hr>
+    <ul>
+      <li>Município</li>
+      <ul>
+        <li>Anual</li>
+        <ul>
+            <li><a target="_blank" href="focos_municipio_ano_atual_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_municipio_ano_atual_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_municipio_ano_atual_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+        </ul>
+        <li>Mensal</li>
+        <ul>
+            <li><a target="_blank" href="focos_municipio_mes_atual_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_municipio_mes_atual_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_municipio_mes_atual_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+        </ul>
+        <li>48H</li>
+        <ul>
+            <li><a target="_blank" href="focos_municipio_48h_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_municipio_48h_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_municipio_48h_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+        </ul>
+      </ul>
+    </ul>
+    <hr>
+    <ul>
+      <li>Bioma</li>
+      <ul>
+        <li>Anual</li>
+        <ul>
+            <li><a target="_blank" href="focos_bioma_ano_atual_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_bioma_ano_atual_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_bioma_ano_atual_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+        </ul>
+        <li>Mensal</li>
+        <ul>
+            <li><a target="_blank" href="focos_bioma_mes_atual_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_bioma_mes_atual_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_bioma_mes_atual_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+        </ul>
+        <li>48H</li>
+        <ul>
+            <li><a target="_blank" href="focos_bioma_48h_titulo.html">Visualizar Tabela</a></li>
+            <li><a target="_blank" href="focos_bioma_48h_pizza_titulo.html">Visualizar gráfico de pizza</a></li>
+            <li><a target="_blank" href="focos_bioma_48h_barra_titulo.html">Visualizar gráfico de colunas</a></li>
+        </ul>
+      </ul>
+    </ul>
+  </body>
+</html>

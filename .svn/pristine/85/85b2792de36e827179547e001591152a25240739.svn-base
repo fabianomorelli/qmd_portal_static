@@ -1,0 +1,195 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+import pandas as pd
+import geopandas as gpd
+from sqlalchemy import create_engine, pool
+from dateutil.relativedelta import relativedelta
+import numpy as np
+import datetime as dt
+import os
+import sys
+
+
+# In[2]:
+
+
+engine = create_engine('postgresql://queimadas:Qmd@1998@manaus.dgi.inpe.br:5432/api', poolclass=pool.NullPool)
+#engine = create_engine('postgresql://queimadas:Qmd@1998@goes2.dgi.inpe.br:5433/api', poolclass=pool.NullPool)
+
+# In[3]:
+
+
+PATH_SAIDA = '/mnt/vol_queimadas_2/produtos/focos/tabela_comparativo_infoqueima'
+#PATH_SAIDA = '/tmp/'
+if not os.path.exists(PATH_SAIDA):
+    os.makedirs(PATH_SAIDA)
+
+
+# In[4]:
+
+
+def strint(x):
+    len_ = len(str(x))
+    return format(int(x), '%s_d' % len_).replace('_', '.') if x else '0'
+def grava_tabela(tabela, nome_arquivo, titulo='', hidden_table=False):
+    if len(tabela):
+        tabela = tabela.copy()
+        cols = tabela.columns[1:]
+        tabela.to_html(nome_arquivo, index=False)
+    else:
+        with open(nome_arquivo, 'w') as f:
+            pass
+    
+    with open(nome_arquivo) as f:
+        conteudo = f.read()
+    style = """
+    <style>
+        @import url('https://themes.googleusercontent.com/fonts/css?kit=xmWzHJTNiUVlXcM2Up20hNvm-motRmcEUjt291E_J5JlS7i_PA3XmlUMpZ8fwaRHVWKEFcAOf1fuOzx96oJvwQ');
+        table {
+            border: 1px solid #c1c1c1;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin: 0 auto;
+        }
+
+        th {
+            background-color: #FADAAB;
+            color: #000000;
+            text-align: right;
+            padding: 5px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #FADAAB;
+        }
+        table.dataframe{
+            text-align: right;
+            background-color: #FDF2E3;
+        }
+        
+        table.dataframe th:first-child,td:first-child {
+            text-align: left !important;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 5px;
+            width: 65px;
+        }
+        p.titulo{
+            text-align: center;
+            font-size: 11pt;
+            font-family: "Arial";
+        }
+    </style>
+    """
+    if titulo:
+        titulo = f'<p class="titulo">{titulo}</p>'
+    if hidden_table:
+        conteudo = titulo
+    else:
+        conteudo = titulo+conteudo
+    conteudo_novo = f'<html><head>{style}<body>' + conteudo.replace('border="1"', 'border="0"') + '</body></head></html>'
+    with open(nome_arquivo, 'w') as f:
+        f.write(conteudo_novo)
+    print(nome_arquivo)
+# grava_tabela(saida, arquivo)
+
+
+# In[19]:
+
+
+# INICIO = sys.argv[1]
+hoje = dt.datetime.now()
+# hoje = dt.datetime(2020,1,1)
+ano_inicio = hoje.year - 6
+ano_atual = hoje.year
+mes_limite = hoje.month
+mes = hoje.month
+
+if hoje.month == 1:
+    mes_limite = 13
+    ano_inicio = hoje.year - 7
+
+
+sql = """
+select 
+    extract(year from v."data")::int ano,
+    e.sigla estado,
+    sum(nfocos) qtd
+from 
+    view_focos_munic_ref v, dados_geo.estados_sigla e
+where 
+    pais_id0=33
+    and v.estado_id1=e.id_1_ws
+    and extract(month from "data") < {mes_limite}
+    and data >= '{ano_inicio}0101' and "data" < '{ano_atual}{mes:02d}01'
+group by 1,2
+""".format(mes=mes, mes_limite=mes_limite, ano_inicio=ano_inicio,ano_atual=ano_atual)
+print(sql)
+engine.connect()
+df = pd.read_sql(sql, engine).sort_values(["ano"])
+
+
+pivot = pd.pivot_table(
+    df,
+    values="qtd",
+    index=["estado"],
+    columns=["ano"],
+    margins=True,
+    margins_name="TOTAL",
+    aggfunc="sum",
+)
+
+del pivot["TOTAL"]
+
+saida = pd.DataFrame()
+saida1 = saida.copy()
+for ano in pivot.columns[:-1]:
+    ano_pos = ano+1
+    saida[ano] = pivot[ano].apply(lambda x: int(x) if not np.isnan(x) else 0)
+
+    name_col = f'_{ano}'
+    saida[name_col] = 0
+    saida[ano_pos] = pivot[ano_pos].apply(lambda x: int(x) if not np.isnan(x) else 0)
+
+
+    saida.loc[saida[ano] > 0, name_col] = round(((saida[ano_pos]-saida[ano])/saida[ano])*100,1)
+    saida.loc[saida[ano] == 0, name_col] = round(saida[ano_pos]*100,1)
+    saida.loc[saida[ano_pos] == 0, name_col] = -100
+    saida.loc[(saida[ano] == 0) & (saida[ano_pos] == 0), name_col] = 0
+
+    saida[ano] = saida[ano].apply(lambda x: format(int(x), '8_d').replace('_', '.') if not np.isnan(x) else 0 )
+    saida[ano_pos] = saida[ano_pos].apply(lambda x: format(int(x), '8_d').replace('_', '.') if not np.isnan(x) else 0 )
+    saida[name_col] = saida[name_col].apply(lambda x: format(int(x), '8_d').replace('_', '.')+'%' if not np.isnan(x) else 0 )
+    saida.rename(columns={name_col: 'Dif%'}, inplace=True)
+# del saida.index.name
+# #     saida = saida[:-1] # remove LINHA de total
+saida = saida.reset_index().rename(columns={'estado': 'Estado'})
+arquivo = os.path.join(PATH_SAIDA, hoje.strftime('estados_br_%Y%m01.html'))
+grava_tabela(saida, arquivo)
+
+
+# In[20]:
+
+
+os.system('cp /mnt/vol_queimadas_2/produtos/focos/tabela_comparativo_infoqueima/*.html /srv/www/queimadas.dgi.inpe.br/apps/portal-static/tabelas_infoqueima/')
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

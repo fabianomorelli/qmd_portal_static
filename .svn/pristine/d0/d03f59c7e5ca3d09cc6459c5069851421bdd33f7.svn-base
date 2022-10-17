@@ -1,0 +1,436 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+import glob
+import pandas as pd
+import geopandas as gpd
+from sqlalchemy import create_engine, pool
+import numpy as np
+import datetime as dt
+import matplotlib.pyplot as plt
+import os
+import warnings
+import imgkit
+import requests
+import locale
+
+# In[2]:
+
+locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.simplefilter(action='ignore', category=UserWarning)
+
+
+# In[3]:
+
+
+modelo = 'modelo.html'
+path_index = '/srv/www/queimadas.dgi.inpe.br/apps/portal-static/monitoramento_aml/index.html'
+PATH_SAIDA = '/srv/www/queimadas.dgi.inpe.br/apps/portal-static/monitoramento_aml/conteudo'
+if not os.path.exists(PATH_SAIDA):
+    os.makedirs(PATH_SAIDA)
+
+print('Apagando arquivos antigos')
+arquivos_antigos = glob.glob(PATH_SAIDA+'/*.html') + glob.glob(PATH_SAIDA+'/*.png')
+for arq in arquivos_antigos:
+    os.remove(arq)
+
+if os.path.exists(path_index):
+    os.remove(path_index)
+
+# In[4]:
+
+
+def myGetMonth(mes):
+    if (mes == 1): return 'Jan'
+    if (mes == 2): return 'Fev'
+    if (mes == 3): return 'Mar'
+    if (mes == 4): return 'Mai'
+    if (mes == 5): return 'Abr'
+    if (mes == 6): return 'Jun'
+    if (mes == 7): return 'Jul'
+    if (mes == 8): return 'Ago'
+    if (mes == 9): return 'Set'
+    if (mes == 10): return 'Out'
+    if (mes == 11): return 'Nov'
+    if (mes == 12): return 'Dez'
+
+
+# In[5]:
+
+
+engine = create_engine('postgresql://queimadas:Qmd@1998@manaus.dgi.inpe.br:5432/api', poolclass=pool.NullPool)
+#engine = create_engine('postgresql://queimadas:Qmd@1998@goes2.dgi.inpe.br:5433/api', poolclass=pool.NullPool)
+
+
+# In[6]:
+
+
+DATA = dt.datetime.now()-dt.timedelta(days=1)
+DATA_ = DATA.strftime('%Y-%m-%d')
+
+
+# In[33]:
+
+
+def strint(x):
+    len_ = len(str(x))
+    return format(int(x), '%s_d' % len_).replace('_', '.') if x else '0'
+def grava_tabela(tabela, nome_arquivo, titulo='', hidden_table=False):
+    if len(tabela):
+        tabela = tabela.copy()
+        cols = tabela.columns[1:]
+        for c in cols:
+            tabela[c]= tabela[c].apply(strint)
+        tabela.to_html(nome_arquivo, index=False)
+    else:
+        with open(nome_arquivo, 'w') as f:
+            pass
+    
+    with open(nome_arquivo) as f:
+        conteudo = f.read()
+    style = """
+    <style>
+        @import url('https://themes.googleusercontent.com/fonts/css?kit=xmWzHJTNiUVlXcM2Up20hNvm-motRmcEUjt291E_J5JlS7i_PA3XmlUMpZ8fwaRHVWKEFcAOf1fuOzx96oJvwQ');
+        table {
+            border: 1px solid #c1c1c1;
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin: 0 auto;
+        }
+
+        th {
+            background-color: #cfcfcF;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #cfcfcF;
+        }
+        table.dataframe{
+            text-align: right;
+        }
+        
+        table.dataframe th:first-child,td:first-child {
+            text-align: left !important;
+        }
+
+        td {
+            padding: 5px;
+        }
+        p.titulo{
+            text-align: center;
+            font-size: 11pt;
+            font-family: "Arial";
+        }
+    </style>
+    """
+    if titulo:
+        titulo = f'<p class="titulo">{titulo}</p>'
+    if hidden_table:
+        conteudo = titulo
+    else:
+        conteudo = titulo+conteudo
+    conteudo_novo = f'<html><head>{style}<body>' + conteudo.replace('border="1"', 'border="0"') + '</body></head></html>'
+    with open(nome_arquivo, 'w') as f:
+        f.write(conteudo_novo)
+    print(nome_arquivo)
+def myGetMonth(mes):
+    if (mes == 1): return 'Jan'
+    if (mes == 2): return 'Fev'
+    if (mes == 3): return 'Mar'
+    if (mes == 4): return 'Mai'
+    if (mes == 5): return 'Abr'
+    if (mes == 6): return 'Jun'
+    if (mes == 7): return 'Jul'
+    if (mes == 8): return 'Ago'
+    if (mes == 9): return 'Set'
+    if (mes == 10): return 'Out'
+    if (mes == 11): return 'Nov'
+    if (mes == 12): return 'Dez'
+
+
+# In[8]:
+
+
+sql = f"""
+select 
+    e.sigla "Estado",
+    sum(nfocos) "Total"
+from 
+    view_focos_munic_ref v, dados_geo.estados_sigla e
+where 
+    pais_id0=33
+    and v.estado_id1=e.id_1_ws
+    and e.id_1_ws in (13,11,17,15,21,51,12,14,16)
+    and data >= '{DATA.year}0101'
+    and data <= '{DATA_}'
+group by 1
+order by 2 desc
+"""
+print(sql)
+engine.connect()
+df = pd.read_sql(sql, engine)
+grava_tabela(df, f'{PATH_SAIDA}/focos_estados_ano.html')
+df
+
+
+# In[9]:
+
+
+sql = f"""
+select 
+    e.sigla "estado",
+    extract(day from data) as "dia",
+    sum(nfocos) "qtd"
+from 
+    view_focos_munic_ref v, dados_geo.estados_sigla e
+where 
+    pais_id0=33
+    and v.estado_id1=e.id_1_ws
+    and e.id_1_ws in (13,11,17,15,21,51,12,14,16)
+    and data >= '{DATA.year}{str(DATA.month).zfill(2)}01'
+    and data <= '{DATA_}'
+group by 1,2
+"""
+print(sql)
+engine.connect()
+df = pd.read_sql(sql, engine)
+
+
+# In[10]:
+
+
+tabela_dia = pd.pivot_table(df, values='qtd', index=['estado'],columns=['dia'], margins=True, margins_name='TOTAL', aggfunc='sum')
+tabela_dia = tabela_dia.fillna(0)
+del tabela_dia.index.name
+del tabela_dia.columns.name
+for c in tabela_dia.columns:
+    tabela_dia[c] = tabela_dia[c].astype(int)
+tabela_dia
+
+
+# In[11]:
+
+
+tmp1 = tabela_dia.sort_values('TOTAL', ascending=False)
+tabela_dia = pd.concat([tmp1[1:], tmp1[:1]])
+tabela_dia
+
+
+# In[12]:
+
+
+for c in tabela_dia.columns[:-1]:
+    tabela_dia.rename(columns={c: int(c)}, inplace=True)
+
+
+# In[13]:
+
+
+tabela_dia = tabela_dia.reset_index().rename(columns={'index': 'Estado'})
+
+
+# In[14]:
+
+
+tabela_dia
+
+
+# In[15]:
+
+
+tabela_dia = pd.merge(tabela_dia[['Estado']], tabela_dia[tabela_dia.columns[::-1]], on='Estado')
+
+
+# In[16]:
+
+
+grava_tabela(tabela_dia, f'{PATH_SAIDA}/tabela_mensal.html')
+
+
+# In[17]:
+
+
+sql = f"""
+select 
+    e.sigla "Estado",
+    sum(nfocos) "Total"
+from 
+    view_focos_munic_ref v, dados_geo.estados_sigla e
+where 
+    pais_id0=33
+    and v.estado_id1=e.id_1_ws
+    and e.id_1_ws in (13,11,17,15,21,51,12,14,16)
+    and data = '{DATA_}'
+group by 1
+order by 2 desc
+"""
+print(sql)
+engine.connect()
+df = pd.read_sql(sql, engine)
+grava_tabela(df, f'{PATH_SAIDA}/focos_estados_24h.html')
+df
+
+
+# In[18]:
+
+
+engine.connect()
+sql = f"""
+select
+    st_simplify(geom, 0.01) as geom,
+    id_1_ws,
+    sigla "Estado"
+from 
+    dados_geo.estados_sigla
+where id_1_ws in (13,11,17,15,21,51,12,14,16)
+"""
+print(sql)
+estado = gpd.read_postgis(sql, engine)
+
+
+# In[19]:
+
+
+stats = pd.merge(estado, df, on='Estado', how='left')
+stats.loc[stats.Total.isnull(), 'Total'] = 0
+stats['Total'] = stats['Total'].astype(int)
+stats['qtd'] = stats['Total'].astype(int)
+stats.sort_values('Total', inplace=True, ascending=False)
+
+
+# In[20]:
+
+
+stats['coords'] = stats['geom'].apply(lambda x: x.centroid.coords[:])
+stats['coords'] = [coords[0] for coords in stats['coords']]
+
+
+# In[21]:
+
+
+base = stats.plot(color='#000000', figsize=(10, 12), edgecolor='black', linewidth=2)
+stats[stats.qtd >= 1000].plot(color='#9b1902', ax=base, edgecolor='black', linewidth=2);
+stats[(stats.qtd >= 300) & (stats.qtd < 1000)].plot(color='#bb402c', ax=base, edgecolor='black', linewidth=2, label='aa');
+stats[(stats.qtd >= 150) & (stats.qtd < 300)].plot(color='#f05a15', ax=base, edgecolor='black', linewidth=2, label='bb');
+stats[(stats.qtd >= 100) & (stats.qtd < 150)].plot(color='#f2861c', ax=base, edgecolor='black', linewidth=2);
+stats[(stats.qtd >= 50) & (stats.qtd < 100)].plot(color='#f39f3b', ax=base, edgecolor='black', linewidth=2);
+stats[(stats.qtd >= 1) & (stats.qtd < 50)].plot(color='#fac283', ax=base, edgecolor='black', linewidth=2);
+stats[stats.qtd == 0].plot(color='#fdebcb', ax=base, edgecolor='black', linewidth=2);
+
+
+
+for idx, row in stats.iterrows():
+    plt.annotate(s=row['Estado']+'\n'+str(row['qtd']), xy=row['coords'], horizontalalignment='center', verticalalignment='center', fontsize=15)
+
+arquivo = f'{PATH_SAIDA}/mapa_estados_aml.png'
+base.get_figure().savefig(arquivo);
+print(arquivo)
+
+
+# In[97]:
+
+
+print(f'Lista dos 20 municípios com maior número de focos nas últimas 24h por estado.')
+for k, i in stats.sort_values('Estado').iterrows():
+    nome = i.Estado
+    arquivo = f'{PATH_SAIDA}/top_20_munic_{nome}.html'
+    print(nome)
+    sql = f"""
+    select 
+        extract(day from data)::int "Dia",
+        e.name_2 "Município",
+        sum(nfocos) qtd
+    from 
+        view_focos_munic_ref v, dados_geo.municipios e
+    where 
+        v.pais_id0=33
+        and v.estado_id1={i.id_1_ws}
+        and v.pais_id0=e.id_0
+        and v.estado_id1=e.id_1
+        and v.municipio_id2=e.id_2
+        and data >= '{DATA.year}{str(DATA.month).zfill(2)}01'
+        and data <= '{DATA_}'
+    group by 1,2
+    """
+    engine.connect()
+    df = pd.read_sql(sql, engine).sort_values('qtd', ascending=False)
+    
+    if not len(df):
+        print(f'NAO FEZ {nome}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        grava_tabela(df, arquivo, titulo='Sem dado para o mês atual', hidden_table=True)
+        continue
+    else:
+        print(f'{nome} - {len(df)}')
+    pivot = pd.pivot_table(df, values='qtd', index=['Município'],columns=['Dia'], margins=True, margins_name='TOTAL', aggfunc='sum')
+    pivot = pivot[:-1]
+    del pivot.columns.name
+    pivot = pivot.sort_values('TOTAL', ascending=False).fillna(0)
+    pivot = pivot.reset_index()
+    pivot = pd.merge(pivot[['Município']], pivot[pivot.columns[::-1]], on='Município')
+
+    if len(pivot):
+        grava_tabela(pivot, arquivo)
+    else:
+        grava_tabela(pivot, arquivo)
+    print(pivot)
+
+
+# In[119]:
+
+
+
+
+#######################################
+sql = """
+select
+   municipio || ' (' || estado || ')' "Município(estado)",count(*) "Quantidade" 
+from
+   collection2.focos_bdq_c2
+where
+   id_0=33 and 3 = any(id_regiao_especial)
+   and eh_satelite_referencia
+   and data_hora_gmt::date >= '20190901 00:00:01'
+   and (id_area_industrial=0 or id_area_industrial is null)
+group by 1
+order by 2 desc,1
+limit 20
+"""
+print(sql)
+engine.connect()
+df = pd.read_sql(sql, engine)
+grava_tabela(df, f'{PATH_SAIDA}/top_20_munic_aml.html')
+df
+#######################################
+
+
+with open(modelo) as f:
+    conteudo = f.read()
+
+
+# In[120]:
+
+
+data_download = f'{DATA.day}{myGetMonth(DATA.month).lower()}{DATA.year}'
+mes_passado = dt.datetime(DATA.year, DATA.month - 1, 1)
+mes_completo = mes_passado.strftime('%b%Y').lower()
+mes_completo_nome = mes_passado.strftime('%B').capitalize()
+conteudo_novo = conteudo.replace('{{fim}}', f'{str(DATA.day).zfill(2)}/{myGetMonth(DATA.month)}')
+conteudo_novo = conteudo_novo.replace('{{data_atual}}', str(dt.datetime.now()))
+conteudo_novo = conteudo_novo.replace('{{data_download}}', data_download)
+conteudo_novo = conteudo_novo.replace('{{mes_completo}}', mes_completo)
+conteudo_novo = conteudo_novo.replace('{{mes_completo_nome}}', mes_completo_nome)
+
+
+# In[122]:
+
+
+with open(path_index, 'w') as f:
+    f.write(conteudo_novo)
+print(path_index)

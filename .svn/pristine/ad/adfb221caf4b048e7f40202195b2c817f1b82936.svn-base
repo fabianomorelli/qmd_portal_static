@@ -1,0 +1,30 @@
+#!/bin/bash
+
+SCRIPTS_DIR=/srv/www/queimadas.dgi.inpe.br/apps/portal-static-goes2/
+#SCRIPTS_DIR=/home/helder/Projetos/portal-static-full/
+
+
+# os.mkdir("%s/graficos_data_ciman/%s/"%(path_saida, DATA_ATUAL.strftime("%Y-%m-%d")))
+mkdir -p $SCRIPTS_DIR/public/graficos_data_ciman/$1
+# chown -R helder $SCRIPTS_DIR/public/graficos_data_ciman/$1
+# chmod 0775 $SCRIPTS_DIR/public/graficos_data_ciman/$1
+
+cd $SCRIPTS_DIR
+echo "iniciando geracao para" $1
+
+source env/bin/activate 
+
+cd source_estatisticas
+
+startDate=$(date -I -d "2021-08-01")
+endDate=$(date -I -d "$1")
+
+d="$startDate"
+while [ "$d" != "$endDate" ]; do 
+	echo "gerando dados para $d"
+	mkdir -p $SCRIPTS_DIR/public/graficos_data_ciman/$d
+	python grafico_comparativo_sazonal_pais_por_data.py $d
+	d=$(date -I -d "$d + 1 day")
+done
+
+deactivate

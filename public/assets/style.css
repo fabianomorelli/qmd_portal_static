@@ -1,0 +1,39 @@
+.page,.cover {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    width: 21cm;
+    height: 30cm;
+    margin: 0 auto;
+    background: white;
+    page-break-after: always;
+    
+}
+.page_footer div{
+    border-bottom: 1pt dotted #4a86e8;
+}
+.page_footer p{
+    text-align: center;
+    margin-top: 5px;
+}
+iframe {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.page_header{
+    margin-top: 15px;
+}
+.page_number{
+    float: right;
+}
+.tabela_indice tbody td p{
+    padding-top: 5pt;
+}
+.page_header p{
+    text-align: left;
+}
+.page_header span.header_title{
+    text-align: left;
+}

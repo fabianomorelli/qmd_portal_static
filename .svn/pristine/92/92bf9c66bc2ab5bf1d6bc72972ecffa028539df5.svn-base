@@ -1,0 +1,31 @@
+
+<html>
+<head><meta charset="UTF-8"><meta charset="UTF-8"><head><meta charset="UTF-8"><body>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart(dados, tipo, container) {
+  
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Element');
+  data.addColumn('number', 'Focos');
+  data.addRows( [['Brasil', 107954.0], ['Argentina', 48468.0], ['Venezuela', 34698.0], ['Paraguai', 22800.0], ['Colombia', 19770.0], ['Bolivia', 12946.0], ['Perú', 9541.0], ['Chile', 2826.0], ['Uruguai', 855.0], ['Guyana', 825.0], ['Equador', 444.0], ['Suriname', 172.0], ['Guyana Francesa', 21.0]]);
+
+  var options = {
+    chart: {
+      title: 'Focos de incêndio',
+      subtitle: 'Focos detectados pelo Satélite de Referência',      
+    }
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById("chart_paises"));
+  chart.draw(data, options);
+}
+</script>
+ <div id="chart_paises" style="width: 100%; height: 100%;"></div>
+</body>
+</html>

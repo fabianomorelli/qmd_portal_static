@@ -1,0 +1,489 @@
+<html><head><meta charset="UTF-8"><meta charset="UTF-8"><head><meta charset="UTF-8"><body><div id="table-scroll" class="table-scroll"><div class="table-wrap"><table class="main-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th class="esquerda"></th>
+      <th class="esquerda">1998</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">1999</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2000</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2001</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2002</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2003</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2004</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2005</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2006</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2007</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2008</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2009</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2010</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2011</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2012</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2013</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2014</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2015</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2016</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2017</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2018</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2019</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="esquerda">Amazônia</th>
+      <td>30.009</td>
+      <td>12%</td>
+      <td>33.606</td>
+      <td>-35%</td>
+      <td>21.796</td>
+      <td>38%</td>
+      <td>30.130</td>
+      <td>143%</td>
+      <td>73.345</td>
+      <td>12%</td>
+      <td>82.759</td>
+      <td>16%</td>
+      <td>96.142</td>
+      <td>12%</td>
+      <td>108.170</td>
+      <td>-42%</td>
+      <td>62.021</td>
+      <td>32%</td>
+      <td>81.844</td>
+      <td>-56%</td>
+      <td>35.561</td>
+      <td>-36%</td>
+      <td>22.503</td>
+      <td>205%</td>
+      <td>68.809</td>
+      <td>-75%</td>
+      <td>17.185</td>
+      <td>103%</td>
+      <td>34.931</td>
+      <td>-44%</td>
+      <td>19.546</td>
+      <td>70%</td>
+      <td>33.403</td>
+      <td>-1%</td>
+      <td>33.073</td>
+      <td>21%</td>
+      <td>40.295</td>
+      <td>11%</td>
+      <td>44.932</td>
+      <td>-25%</td>
+      <td>33.463</td>
+      <td>50%</td>
+      <td>50.512</td>
+      <td>3%</td>
+      <td>52.386</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Caatinga</th>
+      <td>958</td>
+      <td>60%</td>
+      <td>1.537</td>
+      <td>-38%</td>
+      <td>951</td>
+      <td>127%</td>
+      <td>2.160</td>
+      <td>51%</td>
+      <td>3.261</td>
+      <td>13%</td>
+      <td>3.685</td>
+      <td>-20%</td>
+      <td>2.936</td>
+      <td>12%</td>
+      <td>3.304</td>
+      <td>-19%</td>
+      <td>2.663</td>
+      <td>87%</td>
+      <td>4.995</td>
+      <td>-49%</td>
+      <td>2.540</td>
+      <td>-7%</td>
+      <td>2.352</td>
+      <td>95%</td>
+      <td>4.593</td>
+      <td>-41%</td>
+      <td>2.678</td>
+      <td>105%</td>
+      <td>5.490</td>
+      <td>-63%</td>
+      <td>1.984</td>
+      <td>32%</td>
+      <td>2.629</td>
+      <td>18%</td>
+      <td>3.103</td>
+      <td>5%</td>
+      <td>3.263</td>
+      <td>-42%</td>
+      <td>1.869</td>
+      <td>65%</td>
+      <td>3.091</td>
+      <td>-12%</td>
+      <td>2.699</td>
+      <td>-15%</td>
+      <td>2.293</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Cerrado</th>
+      <td>23.712</td>
+      <td>-1%</td>
+      <td>23.352</td>
+      <td>-36%</td>
+      <td>14.944</td>
+      <td>46%</td>
+      <td>21.847</td>
+      <td>69%</td>
+      <td>36.986</td>
+      <td>3%</td>
+      <td>38.097</td>
+      <td>11%</td>
+      <td>42.270</td>
+      <td>-19%</td>
+      <td>34.073</td>
+      <td>-17%</td>
+      <td>28.031</td>
+      <td>158%</td>
+      <td>72.543</td>
+      <td>-68%</td>
+      <td>22.901</td>
+      <td>-26%</td>
+      <td>16.938</td>
+      <td>332%</td>
+      <td>73.179</td>
+      <td>-60%</td>
+      <td>29.295</td>
+      <td>72%</td>
+      <td>50.617</td>
+      <td>-58%</td>
+      <td>21.078</td>
+      <td>50%</td>
+      <td>31.747</td>
+      <td>-7%</td>
+      <td>29.494</td>
+      <td>18%</td>
+      <td>34.836</td>
+      <td>-14%</td>
+      <td>29.962</td>
+      <td>-22%</td>
+      <td>23.103</td>
+      <td>41%</td>
+      <td>32.606</td>
+      <td>-10%</td>
+      <td>29.254</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Mata Atlântica</th>
+      <td>1.676</td>
+      <td>256%</td>
+      <td>5.971</td>
+      <td>-33%</td>
+      <td>3.974</td>
+      <td>-25%</td>
+      <td>2.971</td>
+      <td>304%</td>
+      <td>12.015</td>
+      <td>102%</td>
+      <td>24.291</td>
+      <td>-42%</td>
+      <td>13.938</td>
+      <td>-11%</td>
+      <td>12.334</td>
+      <td>40%</td>
+      <td>17.334</td>
+      <td>-27%</td>
+      <td>12.625</td>
+      <td>-15%</td>
+      <td>10.615</td>
+      <td>-16%</td>
+      <td>8.816</td>
+      <td>50%</td>
+      <td>13.267</td>
+      <td>-30%</td>
+      <td>9.272</td>
+      <td>-14%</td>
+      <td>7.973</td>
+      <td>-19%</td>
+      <td>6.454</td>
+      <td>18%</td>
+      <td>7.648</td>
+      <td>-19%</td>
+      <td>6.191</td>
+      <td>81%</td>
+      <td>11.223</td>
+      <td>-22%</td>
+      <td>8.676</td>
+      <td>-16%</td>
+      <td>7.250</td>
+      <td>38%</td>
+      <td>10.020</td>
+      <td>5%</td>
+      <td>10.528</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Pampa</th>
+      <td>9</td>
+      <td>1.433%</td>
+      <td>138</td>
+      <td>1%</td>
+      <td>140</td>
+      <td>-40%</td>
+      <td>84</td>
+      <td>1.044%</td>
+      <td>961</td>
+      <td>47%</td>
+      <td>1.414</td>
+      <td>-12%</td>
+      <td>1.236</td>
+      <td>-28%</td>
+      <td>888</td>
+      <td>20%</td>
+      <td>1.070</td>
+      <td>-27%</td>
+      <td>775</td>
+      <td>-7%</td>
+      <td>715</td>
+      <td>45%</td>
+      <td>1.042</td>
+      <td>-44%</td>
+      <td>584</td>
+      <td>0%</td>
+      <td>580</td>
+      <td>59%</td>
+      <td>922</td>
+      <td>-37%</td>
+      <td>574</td>
+      <td>-3%</td>
+      <td>557</td>
+      <td>-1%</td>
+      <td>551</td>
+      <td>67%</td>
+      <td>922</td>
+      <td>-20%</td>
+      <td>735</td>
+      <td>-15%</td>
+      <td>623</td>
+      <td>69%</td>
+      <td>1.054</td>
+      <td>37%</td>
+      <td>1.451</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Pantanal</th>
+      <td>488</td>
+      <td>871%</td>
+      <td>4.741</td>
+      <td>-88%</td>
+      <td>527</td>
+      <td>672%</td>
+      <td>4.072</td>
+      <td>19%</td>
+      <td>4.846</td>
+      <td>-61%</td>
+      <td>1.876</td>
+      <td>116%</td>
+      <td>4.066</td>
+      <td>125%</td>
+      <td>9.182</td>
+      <td>-79%</td>
+      <td>1.930</td>
+      <td>89%</td>
+      <td>3.660</td>
+      <td>-63%</td>
+      <td>1.338</td>
+      <td>155%</td>
+      <td>3.420</td>
+      <td>-12%</td>
+      <td>2.978</td>
+      <td>-70%</td>
+      <td>888</td>
+      <td>493%</td>
+      <td>5.269</td>
+      <td>-79%</td>
+      <td>1.057</td>
+      <td>-48%</td>
+      <td>548</td>
+      <td>285%</td>
+      <td>2.114</td>
+      <td>-13%</td>
+      <td>1.821</td>
+      <td>55%</td>
+      <td>2.834</td>
+      <td>-72%</td>
+      <td>789</td>
+      <td>340%</td>
+      <td>3.476</td>
+      <td>246%</td>
+      <td>12.042</td>
+    </tr>
+    <tr>
+      <th class="esquerda">TOTAL</th>
+      <td>56.852</td>
+      <td>22%</td>
+      <td>69.345</td>
+      <td>-39%</td>
+      <td>42.332</td>
+      <td>44%</td>
+      <td>61.264</td>
+      <td>114%</td>
+      <td>131.414</td>
+      <td>15%</td>
+      <td>152.122</td>
+      <td>5%</td>
+      <td>160.588</td>
+      <td>4%</td>
+      <td>167.951</td>
+      <td>-32%</td>
+      <td>113.049</td>
+      <td>56%</td>
+      <td>176.442</td>
+      <td>-58%</td>
+      <td>73.670</td>
+      <td>-25%</td>
+      <td>55.071</td>
+      <td>196%</td>
+      <td>163.410</td>
+      <td>-63%</td>
+      <td>59.898</td>
+      <td>75%</td>
+      <td>105.202</td>
+      <td>-51%</td>
+      <td>50.693</td>
+      <td>51%</td>
+      <td>76.532</td>
+      <td>-2%</td>
+      <td>74.526</td>
+      <td>23%</td>
+      <td>92.360</td>
+      <td>-3%</td>
+      <td>89.008</td>
+      <td>-23%</td>
+      <td>68.319</td>
+      <td>46%</td>
+      <td>100.367</td>
+      <td>7%</td>
+      <td>107.954</td>
+    </tr>
+  </tbody>
+</table>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js></script>
+<script>
+jQuery(document).ready(function() {
+   jQuery('.main-table').clone(true).appendTo('#table-scroll').addClass('clone');   
+ });
+</script>
+<style>
+.dataframe,.main-table{
+    width: 100%;
+}
+table {border: none;
+}
+.espaco_esquerda {
+    padding-left: 60px;
+}
+
+table tr:nth-child(even) {
+    background-color: #FDF2E3;
+}
+
+table thead tr{
+    background-color: #FDF2E3;
+}
+
+table tr {
+    background-color: #FADAAB;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-bottom: 1em;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 0;
+    overflow-y: auto;
+}
+body {
+    margin: 0;
+}
+table th{  
+  width: 65px;
+}
+
+*{
+text-align: right;
+border: 0px;
+}
+
+.table-scroll {
+    position:relative;
+    margin:auto;
+    overflow:hidden;
+}
+.table-wrap {
+    width:100%;
+    overflow:auto;
+}
+.table-scroll table {
+    width:100%;
+    margin:auto;
+    border-spacing:0;
+}
+.table-scroll th, .table-scroll td {
+    padding:5px 10px;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.clone {
+    position:absolute;
+    top:0;
+    left:0;
+    pointer-events:none;
+}
+.clone th, .clone td {
+    visibility:hidden
+}
+thead{
+border: 1px solid black;
+}
+.clone tbody th {
+    visibility:visible;
+}
+.clone .fixed-side {
+    visibility:visible;
+}
+
+.esquerda{
+    padding-right: 150px;
+    border-right: 1px solid black;
+}
+</style>
+
+</div></div></body></html>

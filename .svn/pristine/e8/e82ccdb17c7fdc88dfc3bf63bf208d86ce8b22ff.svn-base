@@ -1,0 +1,139 @@
+<html><head><meta charset="UTF-8"><meta charset="UTF-8"><head><meta charset="UTF-8"><body><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>qtd</th>
+    </tr>
+    <tr>
+      <th>pais</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Brasil</th>
+      <td>107954</td>
+    </tr>
+    <tr>
+      <th>Argentina</th>
+      <td>48468</td>
+    </tr>
+    <tr>
+      <th>Venezuela</th>
+      <td>34698</td>
+    </tr>
+    <tr>
+      <th>Paraguai</th>
+      <td>22800</td>
+    </tr>
+    <tr>
+      <th>Colombia</th>
+      <td>19770</td>
+    </tr>
+    <tr>
+      <th>Bolivia</th>
+      <td>12946</td>
+    </tr>
+    <tr>
+      <th>Perú</th>
+      <td>9541</td>
+    </tr>
+    <tr>
+      <th>Chile</th>
+      <td>2826</td>
+    </tr>
+    <tr>
+      <th>Uruguai</th>
+      <td>855</td>
+    </tr>
+    <tr>
+      <th>Guyana</th>
+      <td>825</td>
+    </tr>
+    <tr>
+      <th>Equador</th>
+      <td>444</td>
+    </tr>
+    <tr>
+      <th>Suriname</th>
+      <td>172</td>
+    </tr>
+    <tr>
+      <th>Guyana Francesa</th>
+      <td>21</td>
+    </tr>
+  </tbody>
+</table>
+<style>
+.dataframe,.main-table{
+    width: 100%;
+}
+table {border: none;
+}
+.espaco_esquerda {
+    padding-left: 60px;
+}
+
+table tr:nth-child(even) {
+    background-color: #FDF2E3;
+}
+
+table thead{
+    display: none;
+}
+
+table tr {
+    background-color: #FADAAB;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-bottom: 1em;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 0;
+    overflow-y: auto;
+}
+body {
+    margin: 0;
+}
+
+table th:first-child {  
+  padding-left: 100px !important;
+}
+
+table th:first-child {  
+    text-align: left;
+    padding-left: 50px !important;
+    width: 150px;
+}
+table tbody td{  
+    padding-right: 50px;
+}
+
+table thead tr:last-child {  
+  display:none;
+}
+
+table thead tr:last-child {  
+  display:none;
+}
+
+table th{  
+  padding-left: 60px;
+  width: 100px;
+}
+
+*{
+text-align: right;
+border: 0px;
+}
+</style>
+
+</body></html>

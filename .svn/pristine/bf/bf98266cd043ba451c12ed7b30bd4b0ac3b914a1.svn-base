@@ -1,0 +1,176 @@
+<html><head><meta charset="UTF-8"><meta charset="UTF-8"><head><meta charset="UTF-8"><body><h3 style="text-align:center;">Tabela anual comparativa de regiões especiais do Brasil - últimos anos no intervalo de 01/Jan até 7/Set</h3><div id="table-scroll" class="table-scroll"><div class="table-wrap"><table class="main-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th class="esquerda"></th>
+      <th class="esquerda">2014</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2015</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2016</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2017</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2018</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2019</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="esquerda">Amazônia Legal</th>
+      <td>52.543</td>
+      <td>-2%</td>
+      <td>51.033</td>
+      <td>24%</td>
+      <td>63.439</td>
+      <td>0%</td>
+      <td>63.834</td>
+      <td>-26%</td>
+      <td>46.907</td>
+      <td>52%</td>
+      <td>71.375</td>
+      <td>7%</td>
+      <td>76.961</td>
+    </tr>
+    <tr>
+      <th class="esquerda">MAP</th>
+      <td>2.679</td>
+      <td>2%</td>
+      <td>2.758</td>
+      <td>67%</td>
+      <td>4.629</td>
+      <td>-34%</td>
+      <td>3.033</td>
+      <td>18%</td>
+      <td>3.600</td>
+      <td>39%</td>
+      <td>5.003</td>
+      <td>12%</td>
+      <td>5.601</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Vale Paraíba - SP</th>
+      <td>115</td>
+      <td>-59%</td>
+      <td>47</td>
+      <td>193%</td>
+      <td>138</td>
+      <td>-41%</td>
+      <td>81</td>
+      <td>11%</td>
+      <td>90</td>
+      <td>-18%</td>
+      <td>73</td>
+      <td>156%</td>
+      <td>187</td>
+    </tr>
+  </tbody>
+</table>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js></script>
+<script>
+jQuery(document).ready(function() {
+   jQuery('.main-table').clone(true).appendTo('#table-scroll').addClass('clone');   
+ });
+</script>
+
+<style>
+.dataframe,.main-table{
+    width: 100%;
+}
+table {
+    border: none;
+    }
+.espaco_esquerda {
+    padding-left: 60px;
+}
+
+table tr:nth-child(even) {
+    background-color: #FDF2E3;
+}
+
+table thead tr{
+    background-color: #FDF2E3;
+}
+
+table tr {
+    background-color: #FADAAB;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-bottom: 1em;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 0;
+    overflow-y: auto;
+}
+body {
+    margin: 0;
+}
+table th{  
+  padding-left: 20px;
+  text-align: left;
+}
+
+
+table *{
+text-align: right;
+border: 0px;
+}
+
+.table-scroll {
+    position:relative;
+    margin:auto;
+    overflow:hidden;
+}
+.table-wrap {
+    width:100%;
+    overflow:auto;
+}
+.table-scroll table {
+    width:100%;
+    margin:auto;
+    border-spacing:0;
+}
+.table-scroll th, .table-scroll td {
+    padding:5px 10px;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.clone {
+    position:absolute;
+    top:0;
+    left:0;
+    pointer-events:none;
+}
+.clone th, .clone td {
+    visibility:hidden
+}
+thead tr th{
+    text-align: right;
+}
+thead{
+border: 1px solid black;
+}
+.clone tbody th {
+    visibility:visible;
+}
+.clone .fixed-side {
+    visibility:visible;
+}
+
+.esquerda{
+    padding-right: 120px;
+    border-right: 1px solid black;
+}
+</style>
+
+</div></div></body></html>

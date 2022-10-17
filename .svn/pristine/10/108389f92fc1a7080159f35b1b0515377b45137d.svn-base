@@ -1,0 +1,623 @@
+#!/usr/bin/env python
+# -*- coding: future_fstrings -*-
+
+import datetime as dt
+import os
+import warnings
+
+import geopandas as gpd
+import imgkit
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import requests
+from PyPDF2 import PdfFileReader, PdfFileWriter
+from sqlalchemy import create_engine, pool
+
+warnings.simplefilter(action="ignore", category=FutureWarning)
+warnings.simplefilter(action="ignore", category=UserWarning)
+
+
+def strint(x):
+    len_ = len(str(x))
+    return "".format(int(x), "%s_d" % len_).replace("_", ".") if x else "0"
+
+
+def grava_tabela_azul(tabela, nome_arquivo, titulo="", hidden_table=False):
+    cols = tabela.columns[1:]
+    for c in cols:
+        tabela[c] = tabela[c].apply(strint)
+    tabela.to_html(nome_arquivo, index=False)
+
+    with open(nome_arquivo) as f:
+        conteudo = f.read()
+    style = """
+    <style>
+        @import url('https://themes.googleusercontent.com/fonts/css?kit=xmWzHJTNiUVlXcM2Up20hNvm-motRmcEUjt291E_J5JlS7i_PA3XmlUMpZ8fwaRHVWKEFcAOf1fuOzx96oJvwQ');
+        table {
+            border: 1px solid rgb(201, 218, 248);
+            border-collapse: collapse;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin: 0 auto;
+        }
+
+        th {
+            background-color: rgb(74, 134, 232);
+            color: #ffffff;
+            text-align: center;
+            padding: 5px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: rgb(201, 218, 248);
+        }
+        table.dataframe{
+            text-align: right;
+        }
+
+        table.dataframe th:first-child,td:first-child {
+            text-align: left !important;
+        }
+
+        td {
+            padding: 5px;
+        }
+        p.titulo{
+            text-align: center;
+            font-size: 11pt;
+            font-family: "Arial";
+        }
+    </style>
+    """
+    if titulo:
+        titulo = f'<p class="titulo">{titulo}</p>'
+    if hidden_table:
+        conteudo = titulo
+    else:
+        conteudo = titulo + conteudo
+    conteudo_novo = (
+        f"<html><head>{style}<body>"
+        + conteudo.replace('border="1"', 'border="0"')
+        + "</body></head></html>"
+    )
+    with open(nome_arquivo, "w") as f:
+        f.write(conteudo_novo)
+    print(nome_arquivo)
+
+
+def myGetMonth(mes):
+    if mes == 1:
+        return "Jan"
+    if mes == 2:
+        return "Fev"
+    if mes == 3:
+        return "Mar"
+    if mes == 4:
+        return "Mai"
+    if mes == 5:
+        return "Abr"
+    if mes == 6:
+        return "Jun"
+    if mes == 7:
+        return "Jul"
+    if mes == 8:
+        return "Ago"
+    if mes == 9:
+        return "Set"
+    if mes == 10:
+        return "Out"
+    if mes == 11:
+        return "Nov"
+    if mes == 12:
+        return "Dez"
+
+
+def wms_to_img(url, saida):
+    try:
+        r = requests.get(url, timeout=30)
+    except:
+        pass
+    else:
+        if r.status_code == 200:
+            with open(saida, "wb") as f:
+                f.write(r.content)
+                return True
+        print(f"ERRO AO SALVAR {saida}")
+
+
+def main():
+    print("Inicio")
+    PATH_SAIDA_BOLETIM = "/srv/www/queimadas.dgi.inpe.br/apps/boletim_op_aml/conteudo"
+    PATH_SAIDA_BASE_DIR = os.path.dirname(PATH_SAIDA_BOLETIM)
+    if not os.path.exists(PATH_SAIDA_BOLETIM):
+        os.makedirs(PATH_SAIDA_BOLETIM)
+
+    engine = create_engine(
+        "postgresql://queimadas:Qmd@1998@manaus.dgi.inpe.br:5432/api",
+        poolclass=pool.NullPool,
+    )
+
+    PAIS = 33
+
+    DATA_ATUAL = dt.datetime.now()
+    ANO_ATUAL = DATA_ATUAL.year
+    MES_ATUAL = DATA_ATUAL.month
+    DIA_ATUAL = DATA_ATUAL.day
+    ONTEM = DATA_ATUAL - dt.timedelta(days=1)
+    ONTEM_ = ONTEM.strftime("%Y-%m-%d")
+    MES_ONTEM = ONTEM.month
+    ANO_ONTEM = ONTEM.year
+
+    sql = f"""
+    select
+        extract(year from v."data")::int ano,
+        e.sigla estado,
+        sum(nfocos) qtd
+    from
+        view_focos_munic_ref v, dados_geo.estados_sigla e
+    where
+        pais_id0={PAIS}
+        and v.estado_id1=e.id_1_ws
+        and e.id_1_ws in (13,11,17,15,21,51,12,14,16)
+        and data <= '{ONTEM_}'
+    group by 1,2
+    """
+    print(sql)
+    engine.connect()
+    df = pd.read_sql(sql, engine).sort_values(["ano"])
+
+    tabela_ano = pd.pivot_table(
+        df,
+        values="qtd",
+        index=["estado"],
+        columns=["ano"],
+        margins=True,
+        margins_name="TOTAL",
+        aggfunc="sum",
+    )
+    del tabela_ano.index.name
+    print(tabela_ano)
+
+    engine.connect()
+    sql = f"""
+    select
+        st_simplify(geom, 0.01) as geom,
+        id_1_ws,
+        sigla estado
+    from
+        dados_geo.estados_sigla
+    where id_1_ws in (13,11,17,15,21,51,12,14,16)
+    """
+    print(sql)
+    estado = gpd.read_postgis(sql, engine)
+
+    ano_atual = (
+        tabela_ano[[ANO_ONTEM]]
+        .reset_index()
+        .rename(columns={"index": "estado", ANO_ONTEM: "qtd"})
+    )
+    ano_atual
+
+    stats = pd.merge(estado, ano_atual, on="estado", how="left")
+    stats.loc[stats.qtd.isnull(), "qtd"] = 0
+    stats["qtd"] = stats["qtd"].astype(int)
+    stats.sort_values("qtd", inplace=True, ascending=False)
+
+    base = stats.plot(color="#000000", figsize=(10, 12), edgecolor="black", linewidth=2)
+    stats[stats.qtd >= 10000].plot(
+        color="#9b1902", ax=base, edgecolor="black", linewidth=2
+    )
+    stats[(stats.qtd >= 7000) & (stats.qtd < 10000)].plot(
+        color="#bb402c", ax=base, edgecolor="black", linewidth=2, label="aa"
+    )
+    stats[(stats.qtd >= 5000) & (stats.qtd < 7000)].plot(
+        color="#f05a15", ax=base, edgecolor="black", linewidth=2, label="bb"
+    )
+    stats[(stats.qtd >= 2000) & (stats.qtd < 5000)].plot(
+        color="#f2861c", ax=base, edgecolor="black", linewidth=2
+    )
+    stats[(stats.qtd >= 500) & (stats.qtd < 2000)].plot(
+        color="#f39f3b", ax=base, edgecolor="black", linewidth=2
+    )
+    stats[(stats.qtd >= 1) & (stats.qtd < 500)].plot(
+        color="#fac283", ax=base, edgecolor="black", linewidth=2
+    )
+    stats[stats.qtd == 0].plot(color="#fdebcb", ax=base, edgecolor="black", linewidth=2)
+    base.get_figure().savefig(f"{PATH_SAIDA_BOLETIM}/mapa_estados_aml.png")
+
+    saida1 = stats.rename(columns={"estado": "Estado", "qtd": "Total"}).sort_values(
+        "Total", ascending=False
+    )[["Estado", "Total"]]
+
+    print(saida1)
+
+    grava_tabela_azul(saida1, f"{PATH_SAIDA_BOLETIM}/focos_por_estados_aml.html")
+
+    sql = f"""
+    select
+        extract(day from v."data")::int dia,
+        e.sigla estado,
+        sum(nfocos) qtd
+    from
+        view_focos_munic_ref v, dados_geo.estados_sigla e
+    where
+        pais_id0={PAIS}
+        and v.estado_id1=e.id_1_ws
+        and e.id_1_ws in (13,11,17,15,21,51,12,14,16)
+        and data >= '{ANO_ONTEM}{str(MES_ONTEM).zfill(2)}01'
+
+        and data <= '{ONTEM_}' -- exclui hoje
+    group by 1,2
+    """
+    print(sql)
+    engine.connect()
+    df = pd.read_sql(sql, engine).sort_values(["dia"])
+
+    tabela_dia = pd.pivot_table(
+        df,
+        values="qtd",
+        index=["estado"],
+        columns=["dia"],
+        margins=True,
+        margins_name="TOTAL",
+        aggfunc="sum",
+    )
+    tabela_dia = tabela_dia.fillna(0)
+    del tabela_dia.index.name
+    del tabela_dia.columns.name
+    for c in tabela_dia.columns:
+        tabela_dia[c] = tabela_dia[c].astype(int)
+    tabela_dia
+
+    tabela_dia_5d = (
+        tabela_dia[tabela_dia.columns[-6:-1]]
+        .reset_index()
+        .rename(columns={"index": "Estado"})[:-1]
+    )
+    tabela_dia_5d
+
+    total = tabela_dia_5d[tabela_dia_5d.columns[1:]].sum(axis=1)
+
+    tabela_dia_5d["Total"] = total
+
+    tabela_dia_5d.sort_values("Total", ascending=False, inplace=True)
+
+    cols_dias = tabela_dia_5d.columns[1:-1]
+    cols_dias
+
+    for c in cols_dias:
+        tabela_dia_5d.rename(columns={c: f"{c}/Ago"}, inplace=True)
+
+    tabela_dia_5d
+
+    grava_tabela_azul(tabela_dia_5d, f"{PATH_SAIDA_BOLETIM}/grafico_5dias.html")
+
+    tabela_dia_ = tabela_dia.drop(columns=["TOTAL"])[:-1]
+
+    tabela_dia_t = tabela_dia_.T
+
+    nrow, ncol = 3, 3
+    fig, axes = plt.subplots(nrow, ncol, figsize=(22, 16))
+    count = 0
+    col = 0
+    for r in range(nrow):
+        for c in range(ncol):
+            tabela_dia_t[[tabela_dia_t.columns[col]]].plot.bar(ax=axes[r, c])
+            col += 1
+            #         df_list[count].plot(ax=axes[r,c])
+            count = +1
+    img = f"{PATH_SAIDA_BOLETIM}/gride_9images.png"
+    print(img)
+    fig.savefig(img)
+
+    engine.connect()
+    sql = """
+    select id_1_ws as id_1, sigla, name_1 from dados_geo.estados_sigla where id_1_ws in (
+    13,11,17,15,21,51,12,14,16)
+    """
+    lista_estados = pd.read_sql(sql, engine).sort_values("sigla", ascending=False)
+
+    print(sql)
+
+    print(
+        f"Lista dos 10 municípios com maior número de focos nas últimas 24h por estado."
+    )
+    for k, i in lista_estados.sort_values("sigla").iterrows():
+        nome = i.sigla
+        print(nome)
+        sql = f"""
+        select
+            e.name_2 municipio,
+            sum(nfocos) qtd
+        from
+            view_focos_munic_ref v, dados_geo.municipios e
+        where
+            v.pais_id0=33
+            and v.estado_id1={i.id_1}
+            and v.pais_id0=e.id_0
+            and v.estado_id1=e.id_1
+            and v.municipio_id2=e.id_2
+            and data = '{ONTEM_}'
+        group by 1
+        order by 2 desc
+        limit 10
+        """
+        engine.connect()
+        munic = pd.read_sql(sql, engine).sort_values("qtd", ascending=False)
+        munic.set_index("municipio", inplace=True)
+        del munic.index.name
+        munic = munic.reset_index().rename(
+            columns={"qtd": "Quantidade", "index": "Município"}
+        )
+        arquivo = f"{PATH_SAIDA_BOLETIM}/top_10_24h_{nome}.html"
+        if len(munic):
+            grava_tabela_azul(
+                munic,
+                arquivo,
+                titulo="Focos detectados pelo satélite de referência no dia %s"
+                % ONTEM.strftime("%d/%m/%Y"),
+            )
+        else:
+            grava_tabela_azul(
+                munic,
+                arquivo,
+                titulo="Sem focos detectados pelo satélite de referência no dia %s"
+                % ONTEM.strftime("%d/%m/%Y"),
+                hidden_table=True,
+            )
+        print(munic)
+
+    sql = """
+        select
+            uc.nome "Unidade de Conservação Federal",
+            array_agg(e.sigla) sigla,
+            sum(v.nfocos) "Quantidade"
+        from
+            view_focos_uc_ref v,
+            dados_geo.estados_sigla e,
+            dados_geo.icmbio_uc_f uc
+        where
+            v.data = '{ontem_}'
+            and v.id_1=e.id_1_ws
+            and v.ong = 'icmbio'
+            and v.id_uc=uc.gid
+            and v.id_uc in
+    (169, 23, 123, 228, 149, 316, 41, 104, 105, 39, 106, 48, 287, 157, 208, 148,
+    288, 114, 321, 49, 63, 176, 61, 13, 216, 178, 180, 222, 171, 128, 65, 12, 122,
+    108, 127, 229, 40, 11, 305, 142, 260, 102, 213, 203, 37, 144, 270, 271, 275,
+    177, 113, 129, 64, 210, 90, 319, 24, 145, 324, 335, 325, 26, 251, 296, 9, 237,
+    262, 165, 17, 10, 314, 253, 254, 238, 156, 31, 151, 236, 277, 111, 189, 255,
+    256, 242, 166, 159, 25, 306, 96, 150, 141, 3, 211, 212, 221, 58, 155, 162, 290,
+    220, 68, 217, 110, 14, 309, 313, 286, 138, 304, 136, 308, 118, 120, 135, 215,
+    119, 115, 116, 188, 233, 234, 15, 307, 264, 88, 232, 158, 154, 117, 121, 285,
+    181, 209, 322, 323, 336, 337, 327, 332, 73, 231, 263, 273, 223, 302, 268)
+        group by 1
+        order by 3 desc, 1
+    limit 10
+    """.format(
+        ontem_=ONTEM_
+    )
+    print(sql)
+    engine.connect()
+    top_uc = pd.read_sql(sql, engine)
+    arquivo = f"{PATH_SAIDA_BOLETIM}/top_10_UC.html"
+    top_uc["Unidade de Conservação Federal"] = (
+        top_uc["Unidade de Conservação Federal"]
+        + " ("
+        + top_uc["sigla"].apply(lambda x: ",".join(x))
+        + ")"
+    )
+    del top_uc["sigla"]
+    if len(top_uc):
+        grava_tabela_azul(
+            top_uc,
+            arquivo,
+            titulo="Focos detectados pelo satélite de referência no dia %s"
+            % ONTEM.strftime("%d/%m/%Y"),
+        )
+    else:
+        grava_tabela_azul(
+            top_uc,
+            arquivo,
+            titulo="Sem focos detectados pelo satélite de referência no dia %s"
+            % ONTEM.strftime("%d/%m/%Y"),
+            hidden_table=True,
+        )
+    top_uc
+
+    sql = """
+    select
+        t_f.nome as "Território Indígena",
+        array_agg(e.sigla) sigla,
+        sum(nfocos) "Quantidade"
+    from
+        view_focos_ti_ref  ti,
+        dados_geo.estados_sigla e,
+        dados_geo.ti_funai t_f
+    where
+        e.id_1_ws in (51,17,21,15,13,14,16,11,12) and
+        e.id_1_ws = ti.id_1 and
+        ti.data = '{ontem_}' and
+        ti.ong = 'funai' and
+        t_f.gid = ti.id_ti
+    group by 1
+    order by 3 desc, 1
+    limit 10
+    """.format(
+        ontem_=ONTEM_
+    )
+    print(sql)
+    engine.connect()
+    top_ti = pd.read_sql(sql, engine).rename(
+        columns={"nome": "Território Indígena", "nfocos": "Quantidade"}
+    )
+    top_ti["Território Indígena"] = (
+        top_ti["Território Indígena"]
+        + " ("
+        + top_ti["sigla"].apply(lambda x: ",".join(x))
+        + ")"
+    )
+    del top_ti["sigla"]
+
+    arquivo = f"{PATH_SAIDA_BOLETIM}/top_10_TI.html"
+
+    if len(top_uc):
+        grava_tabela_azul(
+            top_ti,
+            arquivo,
+            titulo="Focos detectados pelo satélite de referência no dia %s"
+            % ONTEM.strftime("%d/%m/%Y"),
+        )
+    else:
+        grava_tabela_azul(
+            top_ti,
+            arquivo,
+            titulo="Sem focos detectados pelo satélite de referência no dia %s"
+            % ONTEM.strftime("%d/%m/%Y"),
+            hidden_table=True,
+        )
+    top_ti
+
+    htmls = [
+        "http://queimadas.dgi.inpe.br/queimadas/portal-static/regiao/grafico_comparativo_sazonal_estado_amazonia_legal.html",
+        "http://queimadas.dgi.inpe.br/queimadas/portal-static/regiao/grafico_comparativo_primeiro_semestre_estado_amazonia_legal.html",
+        "http://queimadas.dgi.inpe.br/queimadas/portal-static/regiao/grafico_comparativo_segundo_semestre_estado_amazonia_legal.html",
+    ]
+
+    print("Convertendo html to jpg")
+
+    for html in htmls:
+        saida = os.path.join(
+            PATH_SAIDA_BOLETIM, os.path.basename(html).replace("html", "jpg")
+        )
+        print(html, saida)
+        imgkit.from_url(html, saida, options={"xvfb": ""})
+
+    print("WMS to image")
+
+    width = 600
+    height = 400
+    data_ontem_ = ONTEM.strftime("%Y%m%d")
+    mes_ = str(MES_ONTEM).zfill(2)
+    print("rf_1d")
+    url = f"http://sirc.dgi.inpe.br/cgi-bin/mapserv?map=/dados/mapfiles/amazonialegal.map&service=WMS&request=GetMap&layers=previsao_rf_prev1d,geo_estados,m_aml&styles=&format=png&version=1.1.1&height={height}&width={width}&srs=EPSG:4326&bbox=-75.1,-19.1,-33.1,7"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "rf_1d.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("rf_2d")
+    url = f"http://sirc.dgi.inpe.br/cgi-bin/mapserv?map=/dados/mapfiles/amazonialegal.map&service=WMS&request=GetMap&layers=previsao_rf_prev2d,geo_estados,m_aml&styles=&format=png&version=1.1.1&height={height}&width={width}&srs=EPSG:4326&bbox=-75.1,-19.1,-33.1,7"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "rf_2d.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("rf_3d")
+    url = f"http://sirc.dgi.inpe.br/cgi-bin/mapserv?map=/dados/mapfiles/amazonialegal.map&service=WMS&request=GetMap&layers=previsao_rf_prev3d,geo_estados,m_aml&styles=&format=png&version=1.1.1&height={height}&width={width}&srs=EPSG:4326&bbox=-75.1,-19.1,-33.1,7"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "rf_3d.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("precipitacao_24h")
+    url = f"http://sigma.cptec.inpe.br/cgi-bin/mapserv?mode=map&map=/extra2/sigma/contextos/prec_sat/WEB-INF/precipitacao.map&mapext=-75.1 -19.1 -33.1 7&prec=/oper/share/goes/goes16/hidroest/est_prec_diaria_web/{ANO_ONTEM}/{mes_}/S11636384_{data_ontem_}1200.gif&mapsize={width} {height}&layers=estados regiao prec relevo"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "precipitacao_24h.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("prev_precipitacao_1d")
+    url = f"http://sirc.dgi.inpe.br/cgi-bin/mapserv?map=/dados/mapfiles/amazonialegal.map&service=WMS&request=GetMap&layers=prev1d,geo_estados,m_aml&styles=&format=png&version=1.1.1&height={height}&width={width}&srs=EPSG:4326&bbox=-75.1,-19.1,-33.1,7"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "prev_precipitacao_1d.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("prev_precipitacao_2d")
+    url = f"http://sirc.dgi.inpe.br/cgi-bin/mapserv?map=/dados/mapfiles/amazonialegal.map&service=WMS&request=GetMap&layers=prev2d,geo_estados,m_aml&styles=&format=png&version=1.1.1&height={height}&width={width}&srs=EPSG:4326&bbox=-75.1,-19.1,-33.1,7"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "prev_precipitacao_2d.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("prev_precipitacao_3d")
+    url = f"http://sirc.dgi.inpe.br/cgi-bin/mapserv?map=/dados/mapfiles/amazonialegal.map&service=WMS&request=GetMap&layers=prev3d,geo_estados,m_aml&styles=&format=png&version=1.1.1&height={height}&width={width}&srs=EPSG:4326&bbox=-75.1,-19.1,-33.1,7"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "prev_precipitacao_3d.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("densidade")
+    url = f"http://prodwww-queimadas.dgi.inpe.br/cgi-bin/mapserv?map=/mapserver/ciman/ciman.map&SERVICE=WMS&REQUEST=Getmap&VERSION=1.1.1&LAYERS=m_aml%20densidade%20estados&SRS=EPSG:4326&mapext=-75.1 -19.1 -33.1 7&mapsize={width} {height}&FORMAT=PNG&mode=map"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "densidade.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("focos")
+    url = f"http://prodwww-queimadas.dgi.inpe.br/cgi-bin/mapserv?map=/mapserver/ciman/ciman.map&SERVICE=WMS&REQUEST=Getmap&VERSION=1.1.1&LAYERS=m_aml%20focos%20estados&SRS=EPSG:4326&FORMAT=PNG&mapext=-75.1 -19.1 -33.1 7&mapsize={width} {height}&mode=map"
+    saida_wms = os.path.join(PATH_SAIDA_BOLETIM, "focos.jpg")
+    wms_to_img(url, saida_wms)
+
+    print("Variaveis de datas")
+
+    engine.connect()
+    query = engine.execute(
+        f"""select sum(nfocos)::int from view_focos_regiao_especial where id_regiao=3 and data >= '20190101' and data <= '{ONTEM_}' and "ref" """
+    )
+    num_focos_aml = [i for i in query][0][0]
+    num_focos_aml_str = strint(num_focos_aml)
+    print(num_focos_aml_str)
+
+    d1 = DATA_ATUAL.strftime("%d/%m/%Y")
+    d2 = (DATA_ATUAL + dt.timedelta(days=1)).strftime("%d/%m/%Y")
+    d3 = (DATA_ATUAL + dt.timedelta(days=2)).strftime("%d/%m/%Y")
+    data_boletim_1 = dt.datetime(2019, 8, 26)
+    numero_boletim = str((DATA_ATUAL - data_boletim_1).days + 1).zfill(3)
+    variaveis = {
+        "data_main": f"{DIA_ATUAL} de Agosto de 2019",
+        "data_header": f"{DIA_ATUAL} de Agosto de 2019".upper(),
+        "data_hoje": DATA_ATUAL.strftime("%d/%m/%Y"),
+        "data_ontem": ONTEM.strftime("%d/%m/%Y"),
+        "dd_mm_ontem": f"{ONTEM.day}/{myGetMonth(ONTEM.month)}",
+        "pos_1d": d1,
+        "pos_2d": d2,
+        "pos_3d": d3,
+        "num_focos_aml": num_focos_aml_str,
+        "ano_atual": ANO_ATUAL,
+        "numero_boletim": numero_boletim,
+    }
+    print(variaveis)
+
+    html_modelo = f"{PATH_SAIDA_BASE_DIR}/modelo.html"
+    html_boletim = f"{PATH_SAIDA_BASE_DIR}/boletim.html"
+
+    with open(html_modelo) as f:
+        conteudo_boletim = f.read()
+
+    for chave in variaveis.keys():
+        sai = f'<span id="{chave}"></span>'
+        entra = str(variaveis[chave])
+        print(sai, entra)
+        conteudo_boletim = conteudo_boletim.replace(sai, entra)
+
+    with open(html_boletim, "w") as f:
+        f.write(conteudo_boletim)
+
+    nome_boletim = (
+        f'{PATH_SAIDA_BASE_DIR}/boletim_{DATA_ATUAL.strftime("%Y-%m-%d")}.pdf'
+    )
+
+    comando = f"xvfb-run -- /usr/bin/wkhtmltopdf {html_boletim} {nome_boletim}"
+    print(comando)
+
+    executado = os.system(comando)
+
+    print("Apaga ultima pagina")
+
+    infile = PdfFileReader(nome_boletim, "rb")
+    output = PdfFileWriter()
+
+    for i in range(infile.getNumPages() - 1):
+        p = infile.getPage(i)
+        output.addPage(p)
+
+    with open(nome_boletim, "wb") as f:
+        output.write(f)
+
+    if executado == 0:
+        print(nome_boletim)
+    else:
+        print("Nao gerou o boletim")
+
+    print(f"FIM", dt.datetime.now())
+
+
+if __name__ == "__main__":
+    main()

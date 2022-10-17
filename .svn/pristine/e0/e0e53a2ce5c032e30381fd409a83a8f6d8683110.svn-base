@@ -1,0 +1,45 @@
+
+            <html><head><meta charset="UTF-8"></head>
+            <body>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {packages: ['corechart'], 'language': 'pt'});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart(dados, tipo, container) {
+              var data = new google.visualization.DataTable();
+              data.addColumn('string', 'Mês');
+              data.addColumn('number', new Date().getFullYear().toString());
+              data.addColumn('number', "Máx");
+              data.addColumn('number', "Méd");
+              data.addColumn('number', "Mín");
+
+              data.addRows([['Jan', 360.0, 322, 170.0, 49], ['Fev', 133.0, 395, 112.0, 37], ['Mar', 344.0, 219, 124.0, 58], ['Abr', 413.0, 623, 217.0, 42], ['Mai', 347.0, 1448, 447.0, 58], ['Jun', 0.0, 2748, 943.0, 175]]);
+
+              var options = {
+                title: '',
+                vAxis: { title: 'N° Focos' },
+                hAxis: { title: 'Mês' },
+                seriesType: 'bars',
+                focusTarget: 'category',
+                bar: { groupWidth: 10},
+                pointSize: 3,
+                series: { 1: { type: 'line' }, 2: { type: 'line', visibleInLegend: true }, 3: { type: 'line', visibleInLegend: true } },
+                width: 900,
+                height: 450
+              };
+              var chart = new google.visualization.ComboChart(document.getElementById('comparativo_historico_paises'));
+              chart.draw(data, options);
+              }
+            </script>
+            <div>
+                <center>
+                    <div style="width: 900px">
+                        <center><div style='font-family: "open_sansregular", Arial, Helvetica, sans-serif;'><big>Comparativo 1º semestre do país: <b>Bolivia</b><big></big></big></center>
+                        <center><div id="comparativo_historico_paises"></div></center>
+                    </div>
+                </center>
+            </div>
+            </body>
+            </html>
+    

@@ -1,0 +1,233 @@
+<html><head><meta charset="UTF-8"><meta charset="UTF-8"><head><meta charset="UTF-8"><body><div id="table-scroll" class="table-scroll"><div class="table-wrap"><table class="main-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th class="esquerda"></th>
+      <th class="esquerda">2014</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2015</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2016</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2017</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2018</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2019</th>
+      <th class="esquerda">Dif%</th>
+      <th class="esquerda">2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="esquerda">Amazônia</th>
+      <td>33.403</td>
+      <td>-1%</td>
+      <td>33.073</td>
+      <td>21%</td>
+      <td>40.295</td>
+      <td>11%</td>
+      <td>44.932</td>
+      <td>-25%</td>
+      <td>33.463</td>
+      <td>50%</td>
+      <td>50.512</td>
+      <td>3%</td>
+      <td>52.386</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Caatinga</th>
+      <td>2.629</td>
+      <td>18%</td>
+      <td>3.103</td>
+      <td>5%</td>
+      <td>3.263</td>
+      <td>-42%</td>
+      <td>1.869</td>
+      <td>65%</td>
+      <td>3.091</td>
+      <td>-12%</td>
+      <td>2.699</td>
+      <td>-15%</td>
+      <td>2.293</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Cerrado</th>
+      <td>31.747</td>
+      <td>-7%</td>
+      <td>29.494</td>
+      <td>18%</td>
+      <td>34.836</td>
+      <td>-14%</td>
+      <td>29.962</td>
+      <td>-22%</td>
+      <td>23.103</td>
+      <td>41%</td>
+      <td>32.606</td>
+      <td>-10%</td>
+      <td>29.254</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Mata Atlântica</th>
+      <td>7.648</td>
+      <td>-19%</td>
+      <td>6.191</td>
+      <td>81%</td>
+      <td>11.223</td>
+      <td>-22%</td>
+      <td>8.676</td>
+      <td>-16%</td>
+      <td>7.250</td>
+      <td>38%</td>
+      <td>10.020</td>
+      <td>5%</td>
+      <td>10.528</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Pampa</th>
+      <td>557</td>
+      <td>-1%</td>
+      <td>551</td>
+      <td>67%</td>
+      <td>922</td>
+      <td>-20%</td>
+      <td>735</td>
+      <td>-15%</td>
+      <td>623</td>
+      <td>69%</td>
+      <td>1.054</td>
+      <td>37%</td>
+      <td>1.451</td>
+    </tr>
+    <tr>
+      <th class="esquerda">Pantanal</th>
+      <td>548</td>
+      <td>285%</td>
+      <td>2.114</td>
+      <td>-13%</td>
+      <td>1.821</td>
+      <td>55%</td>
+      <td>2.834</td>
+      <td>-72%</td>
+      <td>789</td>
+      <td>340%</td>
+      <td>3.476</td>
+      <td>246%</td>
+      <td>12.042</td>
+    </tr>
+    <tr>
+      <th class="esquerda">TOTAL</th>
+      <td>76.532</td>
+      <td>-2%</td>
+      <td>74.526</td>
+      <td>23%</td>
+      <td>92.360</td>
+      <td>-3%</td>
+      <td>89.008</td>
+      <td>-23%</td>
+      <td>68.319</td>
+      <td>46%</td>
+      <td>100.367</td>
+      <td>7%</td>
+      <td>107.954</td>
+    </tr>
+  </tbody>
+</table>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js></script>
+<script>
+jQuery(document).ready(function() {
+   jQuery('.main-table').clone(true).appendTo('#table-scroll').addClass('clone');   
+ });
+</script>
+<style>
+.dataframe,.main-table{
+    width: 100%;
+}
+table {border: none;
+}
+.espaco_esquerda {
+    padding-left: 60px;
+}
+
+table tr:nth-child(even) {
+    background-color: #FDF2E3;
+}
+
+table thead tr{
+    background-color: #FDF2E3;
+}
+
+table tr {
+    background-color: #FADAAB;
+}
+
+table {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-bottom: 1em;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 0;
+    overflow-y: auto;
+}
+body {
+    margin: 0;
+}
+table th{  
+  width: 65px;
+}
+
+*{
+text-align: right;
+border: 0px;
+}
+
+.table-scroll {
+    position:relative;
+    margin:auto;
+    overflow:hidden;
+}
+.table-wrap {
+    width:100%;
+    overflow:auto;
+}
+.table-scroll table {
+    width:100%;
+    margin:auto;
+    border-spacing:0;
+}
+.table-scroll th, .table-scroll td {
+    padding:5px 10px;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.clone {
+    position:absolute;
+    top:0;
+    left:0;
+    pointer-events:none;
+}
+.clone th, .clone td {
+    visibility:hidden
+}
+thead{
+border: 1px solid black;
+}
+.clone tbody th {
+    visibility:visible;
+}
+.clone .fixed-side {
+    visibility:visible;
+}
+
+.esquerda{
+    padding-right: 150px;
+    border-right: 1px solid black;
+}
+</style>
+
+</div></div></body></html>

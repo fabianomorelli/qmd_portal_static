@@ -1,0 +1,45 @@
+
+            <html><head><meta charset="UTF-8"></head>
+            <body>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {packages: ['corechart'], 'language': 'pt'});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart(dados, tipo, container) {
+              var data = new google.visualization.DataTable();
+              data.addColumn('string', 'Mês');
+              data.addColumn('number', new Date().getFullYear().toString());
+              data.addColumn('number', "Máx");
+              data.addColumn('number', "Méd");
+              data.addColumn('number', "Mín");
+
+              data.addRows([['Jul', 0.0, 4, 2.0, 1], ['Ago', 0.0, 28, 7.0, 1], ['Set', 0.0, 158, 59.0, 22], ['Out', 0.0, 391, 200.0, 70], ['Nov', 0.0, 227, 99.0, 33], ['Dez', 0.0, 89, 20.0, 2]]);
+
+              var options = {
+                title: '',
+                vAxis: { title: 'N° Focos' },
+                hAxis: { title: 'Mês' },
+                seriesType: 'bars',
+                focusTarget: 'category',
+                bar: { groupWidth: 10},
+                pointSize: 3,
+                series: { 1: { type: 'line' }, 2: { type: 'line', visibleInLegend: true }, 3: { type: 'line', visibleInLegend: true } },
+                width: 900,
+                height: 450
+              };
+              var chart = new google.visualization.ComboChart(document.getElementById('comparativo_historico_paises'));
+              chart.draw(data, options);
+              }
+            </script>
+            <div>
+                <center>
+                    <div style="width: 900px">
+                        <center><div style='font-family: "open_sansregular", Arial, Helvetica, sans-serif;'><big>Comparativo 2º semestre do país: <b>Suriname</b><big></big></big></center>
+                        <center><div id="comparativo_historico_paises"></div></center>
+                    </div>
+                </center>
+            </div>
+            </body>
+            </html>
+    

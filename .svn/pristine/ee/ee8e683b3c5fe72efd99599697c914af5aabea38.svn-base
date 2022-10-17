@@ -1,0 +1,44 @@
+
+        <html><head><meta charset="UTF-8"></head>
+        <body>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart'], 'language': 'pt'});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart(dados, tipo, container) {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Ano');
+          data.addColumn('number', 'Focos');
+          data.addRows( [['1998', 136142], ['1999', 179031], ['2000', 133341], ['2001', 198693], ['2002', 462234], ['2003', 572739], ['2004', 601567], ['2005', 557836], ['2006', 427935], ['2007', 614976], ['2008', 398796], ['2009', 303788], ['2010', 523512], ['2011', 297993], ['2012', 347700], ['2013', 264271], ['2014', 280855], ['2015', 332436], ['2016', 337047], ['2017', 343820], ['2018', 271787], ['2019', 361940], ['2020', 97358]]);
+
+          var options = {
+            chart: {
+              title: '',
+            },
+            width: 900,
+            height: 450,
+            legend: { position: "none" },
+            focusTarget: 'category',
+            hAxis: {
+              ticks: 1,
+              slantedText: true,
+              slantedTextAngle: 45 // here you can even use 180 
+            },
+            colors: ['#CC0000', '#FF6600', '#FFCC00']
+          };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById("serie_historica_paises"));
+          chart.draw(data, options);
+        }
+        </script>
+        <div>
+            <center>
+            <div style="width: 900px">
+                <center><div style='font-family: "open_sansregular", Arial, Helvetica, sans-serif;'><big>Série histórica do país: <b>América do Sul</b><big></big></big></center>
+                <center><div id="serie_historica_paises"></div></center>
+            </div>
+            </center>
+        </div>
+        </body>
+        </html>

@@ -1,0 +1,574 @@
+<head><meta charset="UTF-8"></head><style  type="text/css" >
+    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col4 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col5 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col6 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col8 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col9 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col10 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col11 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col0 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col1 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col2 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col3 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col7 {
+            : ;
+            background-color:  #FFCC00;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col9 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col2 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col8 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col1 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col5 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col10 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col11 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col0 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col6 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col4 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col7 {
+            background-color:  #CC0000;
+            : ;
+        }    #T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col3 {
+            background-color:  #CC0000;
+            : ;
+        }</style><table id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04" ><thead>    <tr>        <th class="index_name level0" >Ano</th>        <th class="col_heading level0 col0" >Janeiro</th>        <th class="col_heading level0 col1" >Fevereiro</th>        <th class="col_heading level0 col2" >Março</th>        <th class="col_heading level0 col3" >Abril</th>        <th class="col_heading level0 col4" >Maio</th>        <th class="col_heading level0 col5" >Junho</th>        <th class="col_heading level0 col6" >Julho</th>        <th class="col_heading level0 col7" >Agosto</th>        <th class="col_heading level0 col8" >Setembro</th>        <th class="col_heading level0 col9" >Outubro</th>        <th class="col_heading level0 col10" >Novembro</th>        <th class="col_heading level0 col11" >Dezembro</th>        <th class="col_heading level0 col12" >Total</th>    </tr>    <tr>        <th class="index_name level0" >Ano</th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row0" class="row_heading level0 row0" >1998</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col0" class="data row0 col0" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col1" class="data row0 col1" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col2" class="data row0 col2" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col3" class="data row0 col3" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col4" class="data row0 col4" >79</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col5" class="data row0 col5" >6</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col6" class="data row0 col6" >5</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col7" class="data row0 col7" >27</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col8" class="data row0 col8" >28</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col9" class="data row0 col9" >38</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col10" class="data row0 col10" >32</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col11" class="data row0 col11" >80</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row0_col12" class="data row0 col12" >295</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row1" class="row_heading level0 row1" >1999</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col0" class="data row1 col0" >338</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col1" class="data row1 col1" >532</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col2" class="data row1 col2" >1216</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col3" class="data row1 col3" >473</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col4" class="data row1 col4" >621</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col5" class="data row1 col5" >136</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col6" class="data row1 col6" >46</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col7" class="data row1 col7" >44</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col8" class="data row1 col8" >96</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col9" class="data row1 col9" >45</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col10" class="data row1 col10" >82</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col11" class="data row1 col11" >192</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row1_col12" class="data row1 col12" >3821</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row2" class="row_heading level0 row2" >2000</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col0" class="data row2 col0" >622</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col1" class="data row2 col1" >1603</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col2" class="data row2 col2" >3718</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col3" class="data row2 col3" >1040</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col4" class="data row2 col4" >599</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col5" class="data row2 col5" >60</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col6" class="data row2 col6" >61</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col7" class="data row2 col7" >72</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col8" class="data row2 col8" >141</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col9" class="data row2 col9" >44</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col10" class="data row2 col10" >87</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col11" class="data row2 col11" >224</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row2_col12" class="data row2 col12" >8271</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row3" class="row_heading level0 row3" >2001</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col0" class="data row3 col0" >1464</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col1" class="data row3 col1" >2774</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col2" class="data row3 col2" >5889</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col3" class="data row3 col3" >2876</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col4" class="data row3 col4" >942</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col5" class="data row3 col5" >128</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col6" class="data row3 col6" >118</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col7" class="data row3 col7" >23</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col8" class="data row3 col8" >63</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col9" class="data row3 col9" >64</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col10" class="data row3 col10" >164</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col11" class="data row3 col11" >241</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row3_col12" class="data row3 col12" >14746</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row4" class="row_heading level0 row4" >2002</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col0" class="data row4 col0" >1562</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col1" class="data row4 col1" >3418</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col2" class="data row4 col2" >3656</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col3" class="data row4 col3" >1658</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col4" class="data row4 col4" >423</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col5" class="data row4 col5" >79</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col6" class="data row4 col6" >222</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col7" class="data row4 col7" >426</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col8" class="data row4 col8" >503</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col9" class="data row4 col9" >840</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col10" class="data row4 col10" >1034</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col11" class="data row4 col11" >2505</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row4_col12" class="data row4 col12" >16326</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row5" class="row_heading level0 row5" >2003</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col0" class="data row5 col0" >5890</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col1" class="data row5 col1" >6281</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col2" class="data row5 col2" >12313</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col3" class="data row5 col3" >5011</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col4" class="data row5 col4" >951</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col5" class="data row5 col5" >93</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col6" class="data row5 col6" >131</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col7" class="data row5 col7" >274</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col8" class="data row5 col8" >267</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col9" class="data row5 col9" >367</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col10" class="data row5 col10" >503</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col11" class="data row5 col11" >1662</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row5_col12" class="data row5 col12" >33743</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row6" class="row_heading level0 row6" >2004</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col0" class="data row6 col0" >3958</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col1" class="data row6 col1" >4414</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col2" class="data row6 col2" >6366</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col3" class="data row6 col3" >3103</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col4" class="data row6 col4" >559</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col5" class="data row6 col5" >125</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col6" class="data row6 col6" >230</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col7" class="data row6 col7" >353</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col8" class="data row6 col8" >382</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col9" class="data row6 col9" >440</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col10" class="data row6 col10" >657</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col11" class="data row6 col11" >2160</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row6_col12" class="data row6 col12" >22747</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row7" class="row_heading level0 row7" >2005</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col0" class="data row7 col0" >3091</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col1" class="data row7 col1" >3323</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col2" class="data row7 col2" >9614</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col3" class="data row7 col3" >3420</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col4" class="data row7 col4" >781</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col5" class="data row7 col5" >158</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col6" class="data row7 col6" >210</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col7" class="data row7 col7" >333</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col8" class="data row7 col8" >623</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col9" class="data row7 col9" >606</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col10" class="data row7 col10" >673</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col11" class="data row7 col11" >2038</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row7_col12" class="data row7 col12" >24870</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row8" class="row_heading level0 row8" >2006</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col0" class="data row8 col0" >2127</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col1" class="data row8 col1" >4017</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col2" class="data row8 col2" >4882</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col3" class="data row8 col3" >4744</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col4" class="data row8 col4" >1290</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col5" class="data row8 col5" >207</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col6" class="data row8 col6" >163</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col7" class="data row8 col7" >452</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col8" class="data row8 col8" >648</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col9" class="data row8 col9" >661</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col10" class="data row8 col10" >1085</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col11" class="data row8 col11" >1759</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row8_col12" class="data row8 col12" >22035</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row9" class="row_heading level0 row9" >2007</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col0" class="data row9 col0" >4509</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col1" class="data row9 col1" >7034</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col2" class="data row9 col2" >5748</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col3" class="data row9 col3" >3384</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col4" class="data row9 col4" >1522</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col5" class="data row9 col5" >271</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col6" class="data row9 col6" >258</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col7" class="data row9 col7" >223</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col8" class="data row9 col8" >259</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col9" class="data row9 col9" >328</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col10" class="data row9 col10" >926</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col11" class="data row9 col11" >1124</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row9_col12" class="data row9 col12" >25586</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row10" class="row_heading level0 row10" >2008</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col0" class="data row10 col0" >3169</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col1" class="data row10 col1" >3139</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col2" class="data row10 col2" >6418</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col3" class="data row10 col3" >3767</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col4" class="data row10 col4" >1327</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col5" class="data row10 col5" >340</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col6" class="data row10 col6" >180</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col7" class="data row10 col7" >201</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col8" class="data row10 col8" >300</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col9" class="data row10 col9" >335</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col10" class="data row10 col10" >627</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col11" class="data row10 col11" >1243</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row10_col12" class="data row10 col12" >21046</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row11" class="row_heading level0 row11" >2009</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col0" class="data row11 col0" >2645</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col1" class="data row11 col1" >2528</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col2" class="data row11 col2" >2792</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col3" class="data row11 col3" >3952</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col4" class="data row11 col4" >1858</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col5" class="data row11 col5" >786</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col6" class="data row11 col6" >308</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col7" class="data row11 col7" >320</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col8" class="data row11 col8" >503</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col9" class="data row11 col9" >544</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col10" class="data row11 col10" >1549</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col11" class="data row11 col11" >2931</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row11_col12" class="data row11 col12" >20716</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row12" class="row_heading level0 row12" >2010</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col0" class="data row12 col0" >6427</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col1" class="data row12 col1" >6325</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col2" class="data row12 col2" >6335</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col3" class="data row12 col3" >1453</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col4" class="data row12 col4" >677</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col5" class="data row12 col5" >93</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col6" class="data row12 col6" >92</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col7" class="data row12 col7" >152</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col8" class="data row12 col8" >197</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col9" class="data row12 col9" >609</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col10" class="data row12 col10" >355</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col11" class="data row12 col11" >932</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row12_col12" class="data row12 col12" >23647</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row13" class="row_heading level0 row13" >2011</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col0" class="data row13 col0" >2620</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col1" class="data row13 col1" >2398</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col2" class="data row13 col2" >1859</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col3" class="data row13 col3" >1561</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col4" class="data row13 col4" >371</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col5" class="data row13 col5" >141</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col6" class="data row13 col6" >218</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col7" class="data row13 col7" >382</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col8" class="data row13 col8" >380</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col9" class="data row13 col9" >513</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col10" class="data row13 col10" >476</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col11" class="data row13 col11" >1130</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row13_col12" class="data row13 col12" >12049</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row14" class="row_heading level0 row14" >2012</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col0" class="data row14 col0" >2609</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col1" class="data row14 col1" >3175</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col2" class="data row14 col2" >1841</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col3" class="data row14 col3" >1032</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col4" class="data row14 col4" >354</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col5" class="data row14 col5" >318</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col6" class="data row14 col6" >301</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col7" class="data row14 col7" >307</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col8" class="data row14 col8" >532</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col9" class="data row14 col9" >676</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col10" class="data row14 col10" >1332</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col11" class="data row14 col11" >1557</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row14_col12" class="data row14 col12" >14034</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row15" class="row_heading level0 row15" >2013</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col0" class="data row15 col0" >3906</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col1" class="data row15 col1" >3824</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col2" class="data row15 col2" >6436</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col3" class="data row15 col3" >3479</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col4" class="data row15 col4" >638</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col5" class="data row15 col5" >152</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col6" class="data row15 col6" >343</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col7" class="data row15 col7" >350</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col8" class="data row15 col8" >397</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col9" class="data row15 col9" >749</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col10" class="data row15 col10" >891</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col11" class="data row15 col11" >1363</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row15_col12" class="data row15 col12" >22528</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row16" class="row_heading level0 row16" >2014</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col0" class="data row16 col0" >3724</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col1" class="data row16 col1" >3512</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col2" class="data row16 col2" >6526</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col3" class="data row16 col3" >3088</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col4" class="data row16 col4" >1644</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col5" class="data row16 col5" >482</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col6" class="data row16 col6" >428</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col7" class="data row16 col7" >300</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col8" class="data row16 col8" >295</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col9" class="data row16 col9" >355</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col10" class="data row16 col10" >619</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col11" class="data row16 col11" >1688</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row16_col12" class="data row16 col12" >22661</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row17" class="row_heading level0 row17" >2015</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col0" class="data row17 col0" >2509</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col1" class="data row17 col1" >2717</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col2" class="data row17 col2" >3470</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col3" class="data row17 col3" >3105</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col4" class="data row17 col4" >2767</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col5" class="data row17 col5" >337</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col6" class="data row17 col6" >283</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col7" class="data row17 col7" >309</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col8" class="data row17 col8" >505</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col9" class="data row17 col9" >776</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col10" class="data row17 col10" >729</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col11" class="data row17 col11" >1670</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row17_col12" class="data row17 col12" >19177</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row18" class="row_heading level0 row18" >2016</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col0" class="data row18 col0" >4652</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col1" class="data row18 col1" >4274</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col2" class="data row18 col2" >6571</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col3" class="data row18 col3" >1928</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col4" class="data row18 col4" >357</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col5" class="data row18 col5" >147</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col6" class="data row18 col6" >207</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col7" class="data row18 col7" >319</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col8" class="data row18 col8" >279</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col9" class="data row18 col9" >512</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col10" class="data row18 col10" >388</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col11" class="data row18 col11" >1009</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row18_col12" class="data row18 col12" >20643</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row19" class="row_heading level0 row19" >2017</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col0" class="data row19 col0" >1736</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col1" class="data row19 col1" >2814</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col2" class="data row19 col2" >2221</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col3" class="data row19 col3" >4566</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col4" class="data row19 col4" >521</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col5" class="data row19 col5" >93</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col6" class="data row19 col6" >200</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col7" class="data row19 col7" >408</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col8" class="data row19 col8" >344</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col9" class="data row19 col9" >498</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col10" class="data row19 col10" >1279</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col11" class="data row19 col11" >2722</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row19_col12" class="data row19 col12" >17402</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row20" class="row_heading level0 row20" >2018</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col0" class="data row20 col0" >3418</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col1" class="data row20 col1" >5101</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col2" class="data row20 col2" >8070</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col3" class="data row20 col3" >3623</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col4" class="data row20 col4" >900</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col5" class="data row20 col5" >327</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col6" class="data row20 col6" >316</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col7" class="data row20 col7" >632</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col8" class="data row20 col8" >298</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col9" class="data row20 col9" >482</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col10" class="data row20 col10" >799</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col11" class="data row20 col11" >2716</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row20_col12" class="data row20 col12" >26682</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row21" class="row_heading level0 row21" >2019</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col0" class="data row21 col0" >4494</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col1" class="data row21 col1" >6635</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col2" class="data row21 col2" >7516</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col3" class="data row21 col3" >5793</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col4" class="data row21 col4" >1254</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col5" class="data row21 col5" >135</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col6" class="data row21 col6" >259</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col7" class="data row21 col7" >542</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col8" class="data row21 col8" >301</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col9" class="data row21 col9" >405</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col10" class="data row21 col10" >690</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col11" class="data row21 col11" >1770</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row21_col12" class="data row21 col12" >29794</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row22" class="row_heading level0 row22" >2020</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col0" class="data row22 col0" >4717</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col1" class="data row22 col1" >7148</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col2" class="data row22 col2" >11122</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col3" class="data row22 col3" >7898</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col4" class="data row22 col4" >2128</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col5" class="data row22 col5" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col6" class="data row22 col6" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col7" class="data row22 col7" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col8" class="data row22 col8" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col9" class="data row22 col9" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col10" class="data row22 col10" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col11" class="data row22 col11" >-</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row22_col12" class="data row22 col12" >33013</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row23" class="row_heading level0 row23" >Máximo*</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col0" class="data row23 col0" >6427</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col1" class="data row23 col1" >7034</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col2" class="data row23 col2" >12313</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col3" class="data row23 col3" >5793</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col4" class="data row23 col4" >2767</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col5" class="data row23 col5" >786</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col6" class="data row23 col6" >428</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col7" class="data row23 col7" >632</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col8" class="data row23 col8" >648</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col9" class="data row23 col9" >840</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col10" class="data row23 col10" >1549</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col11" class="data row23 col11" >2931</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row23_col12" class="data row23 col12" >33743</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row24" class="row_heading level0 row24" >Média*</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col0" class="data row24 col0" >3118</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col1" class="data row24 col1" >3802</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col2" class="data row24 col2" >5403</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col3" class="data row24 col3" >3003</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col4" class="data row24 col4" >929</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col5" class="data row24 col5" >210</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col6" class="data row24 col6" >208</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col7" class="data row24 col7" >293</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col8" class="data row24 col8" >334</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col9" class="data row24 col9" >449</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col10" class="data row24 col10" >681</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col11" class="data row24 col11" >1487</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row24_col12" class="data row24 col12" >19219</td>
+            </tr>
+            <tr>
+                        <th id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04level0_row25" class="row_heading level0 row25" >Mínimo*</th>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col0" class="data row25 col0" >338</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col1" class="data row25 col1" >532</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col2" class="data row25 col2" >1216</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col3" class="data row25 col3" >473</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col4" class="data row25 col4" >79</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col5" class="data row25 col5" >6</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col6" class="data row25 col6" >5</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col7" class="data row25 col7" >23</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col8" class="data row25 col8" >28</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col9" class="data row25 col9" >38</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col10" class="data row25 col10" >32</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col11" class="data row25 col11" >80</td>
+                        <td id="T_5c914d0d_9a5f_11ea_9a32_28924ad18a04row25_col12" class="data row25 col12" >295</td>
+            </tr>
+    </tbody></table>
+    <style>
+
+    * {
+        text-align: right;
+        border: 0px;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    table {
+        text-align: left;
+        border-collapse: collapse;
+        border-spacing: 0px;
+        margin-bottom: 1em;
+        font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        border: 1px solid #666;
+        border-radius: 6px;
+        padding: 7px;
+        margin: 0 auto;
+        overflow-y: auto;
+        border: none;
+        font-weight: bold;
+    }
+
+    table th {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background: #ddd none repeat scroll 0 0;
+        border-color: #e7e7e7;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 0.1em;
+        color: #666;
+        text-align: center;
+    }
+
+    table tr {
+        background: #f5f5f5 none repeat scroll 0 0;
+        border-bottom: 1px solid #d5d5d5;
+        border-right: 1px solid #d5d5d5;
+    }
+
+    table td, table th {
+        padding: 9px;
+        vertical-align: top;
+    }
+
+    table thead tr{
+        background-color: #FDF2E3;
+    }
+
+    table thead tr:nth-child(2) {
+        display: none;
+    }
+
+    table tr {
+        background: #f5f5f5 none repeat scroll 0 0;
+    }
+
+    table tr:last-child {
+        background-color: #FFCC00 !important;
+    }
+
+    table tr:nth-last-child(2) {
+        background-color: #FF6600 !important;
+    }
+
+    table tr:nth-last-child(3) {
+        color: #ffffff!important;
+        background-color: #CC0000 !important;
+    }
+
+    table th:first-child {  
+      margin-left: 100px !important;
+    }
+
+    </style>
+    
