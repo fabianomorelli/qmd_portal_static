@@ -1,7 +1,0 @@
-#!/bin/bash
-
-FILES=$(ls regiao/grafico_historico_estado_*.html bioma/grafico_historico_estado_*.html estado/grafico_historico_estado_*.html grafico_historico_pais_*.html)
-
-for f in $FILES; do
-	vim +'normal @m' +wqa $f	
-done
