@@ -23,11 +23,13 @@ database = get.getDatabase()
 engine = create_engine('postgresql://%s:%s@%s:%s/api'%(database["user"], database["password"], database["host"], database["port"]), poolclass=pool.NullPool)
 
 path_temp = os.path.join(get.returnPath(), 'tmp')
+path_img = os.path.join(get.returnPath(), 'situacao_atual/paises')
 
 try:
-    os.mkdir(path_temp)
+    os.makedirs(path_temp, exist_ok=True)
 except OSError as error:
-    print(error) 
+    print(error)
+
 ARQUIVO_SAIDA = "%s/focos_paises_ano_atual.html"%(path_temp)
 
 
@@ -246,52 +248,54 @@ paises_stats.sort_values("qtd", inplace=True, ascending=False)
 
 
 base = paises_stats.plot(
-    color="#fdebcb", figsize=(10, 12), edgecolor="black", linewidth=2
+    color="#fdebcb", figsize=(5, 6), edgecolor="black", linewidth=1
 )
 
 paises_stats[(paises_stats.qtd >= 250000)].plot(
-    color='#531717', ax=base, edgecolor='black', linewidth=2
+    color='#531717', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 150000) & (paises_stats.qtd < 250000)].plot(
-    color='#c14336', ax=base, edgecolor='black', linewidth=2
+    color='#c14336', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 50000) & (paises_stats.qtd < 150000)].plot(
-    color='#c14336', ax=base, edgecolor='black', linewidth=2
+    color='#c14336', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 25000) & (paises_stats.qtd < 50000)].plot(
-    color='#f05b31', ax=base, edgecolor='black', linewidth=2
+    color='#f05b31', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 10000) & (paises_stats.qtd < 25000)].plot(
-    color='#f48639', ax=base, edgecolor='black', linewidth=2
+    color='#f48639', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 5000) & (paises_stats.qtd < 10000)].plot(
-    color='#fbcfa7', ax=base, edgecolor='black', linewidth=2
+    color='#fbcfa7', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 1000) & (paises_stats.qtd < 5000)].plot(
-    color='#feebcf', ax=base, edgecolor='black', linewidth=2
+    color='#feebcf', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 500) & (paises_stats.qtd < 1000)].plot(
-    color='#fef8cc', ax=base, edgecolor='black', linewidth=2
+    color='#fef8cc', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 100) & (paises_stats.qtd < 500)].plot(
-    color='#c2e699', ax=base, edgecolor='black', linewidth=2
+    color='#c2e699', ax=base, edgecolor='black', linewidth=1
 )
 paises_stats[(paises_stats.qtd >= 0) & (paises_stats.qtd < 100)].plot(
-    color='#78c679', ax=base, edgecolor='black', linewidth=2
+    color='#78c679', ax=base, edgecolor='black', linewidth=1
 )
 
 minx, miny, maxx, maxy = -83.0, -58.0, -33.0, 13.0
 base.set_xlim(minx, maxx)
 base.set_ylim(miny, maxy)
 saida_mapa = ARQUIVO_SAIDA.replace(".html", "_mapa.png")
+
+saida_mapa = os.path.join(path_img, os.path.basename(saida_mapa))
 base.get_figure().savefig(saida_mapa)
 
 
 img = os.path.basename(saida_mapa)
-img
+#img
 
 
-print(saida_mapa)
+#print(saida_mapa)
 
 
 html = f"""
@@ -304,12 +308,14 @@ html = f"""
     <title></title>
 </head>
 <body style="text-align: center;">
-    <div><img src="{img}" alt="{img}"></div>
+    <div><img src="/situacao_atual/paises/{img}" alt="{img}"></div>
     <div><img src="../../images/leg_focos_paises_ano_atual.png" alt="legenda"></div>
 </body>
 </html>
 """
-saida_mapa_html = saida_mapa.replace(".png", ".html")
+
+saida_mapa_html = img.replace(".png", ".html")
+saida_mapa_html = os.path.join(path_temp, saida_mapa_html)
 with open(saida_mapa_html, "w") as f:
     f.write(html)
 print(saida_mapa_html)
