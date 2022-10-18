@@ -20,11 +20,15 @@ warnings.simplefilter(action="ignore", category=UserWarning)
 
 database = get.getDatabase()
 
-#engine = create_engine('postgresql://queimadas:Qmd@1998@manaus.dgi.inpe.br:5432/api', poolclass=pool.NullPool)
 engine = create_engine('postgresql://%s:%s@%s:%s/api'%(database["user"], database["password"], database["host"], database["port"]), poolclass=pool.NullPool)
 
+path_temp = os.path.join(get.returnPath(), 'tmp')
 
-ARQUIVO_SAIDA = "%s/focos_paises_ano_atual.html"%(get.returnPath())
+try:
+    os.mkdir(path_temp)
+except OSError as error:
+    print(error) 
+ARQUIVO_SAIDA = "%s/focos_paises_ano_atual.html"%(path_temp)
 
 
 DATA_ATUAL = dt.datetime.now()
@@ -301,7 +305,7 @@ html = f"""
 </head>
 <body style="text-align: center;">
     <div><img src="{img}" alt="{img}"></div>
-    <div><img src="http://queimadas.dgi.inpe.br/queimadas/portal-static/v_paises_focos_anual.png" alt="legenda"></div>
+    <div><img src="../../images/leg_focos_paises_ano_atual.png" alt="legenda"></div>
 </body>
 </html>
 """
