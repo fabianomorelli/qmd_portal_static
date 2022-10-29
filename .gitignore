@@ -129,6 +129,8 @@ dmypy.json
 .pyre/
 
 # End of https://www.gitignore.io/api/python
+
+# Definicoes feitas por Fabiano Morelli
 *.csv
 *.htm
 *.html
@@ -144,3 +146,4 @@ conteudo/
 monitoramento_aml/
 tabela_situacao_atual_infoqueima/
 .svn
+config.ini
