@@ -136,6 +136,7 @@ dmypy.json
 *.html
 *.tgz
 *.zip
+*.txt
 focos*.png
 grafico*.png
 shapes/

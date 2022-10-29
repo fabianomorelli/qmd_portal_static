@@ -24,13 +24,13 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 	<meta name="title" content="Área Queimada - Programa Queimadas - INPE">
 	<meta name="robots" content="index,follow">
     <title>Situação atual - Programa Queimadas - INPE</title>
-    <link rel="stylesheet" href="assets/css/page.min.css">
-    <link rel="stylesheet" href="assets/css/base_plugin.css?_=<?= $date ?>">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/jquery/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/page.min.css">
+    <link rel="stylesheet" href="../assets/css/base_plugin.css?_=<?= $date ?>">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/jquery/jquery-ui.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="assets/leaflet/fullscreen/leaflet.fullscreen.css">
-    <link rel="stylesheet" href="assets/leaflet/geosearch/geosearch.css">
+    <link rel="stylesheet" href="../assets/leaflet/fullscreen/leaflet.fullscreen.css">
+    <link rel="stylesheet" href="../assets/leaflet/geosearch/geosearch.css">
   
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -38,13 +38,13 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
   <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <style type="text/css">
-  <?php include_once("assets/css/situacao-atual.css"); ?>
+  <?php include_once("../assets/css/situacao-atual.css"); ?>
   </style>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
-  <script src="assets/jquery/jquery-ui.js" type="text/javascript"></script>
+  <script src="../assets/jquery/jquery-ui.js" type="text/javascript"></script>
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-  <script src="assets/leaflet/fullscreen/Leaflet.fullscreen.min.js"></script>
-  <script src="assets/leaflet/geosearch/geosearch.js"></script>
+  <script src="../assets/leaflet/fullscreen/Leaflet.fullscreen.min.js"></script>
+  <script src="../assets/leaflet/geosearch/geosearch.js"></script>
 	<script>
 		var loaded=0,n_frames;
 		function resizeIframe(obj){try{obj.style.height = (obj.id=="comparativa-regiao")?'100px':(obj.contentWindow.document.body.scrollHeight + 'px');}catch(e){console.log("erro:",e)}finally{loaded++;checkLoaded();}}
@@ -90,7 +90,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 				<div class="container text-left align-top" id="container-logo">
 					<div id="logo" class="text-left">
 						<a title="" href="<?= $url_qmd ?>portal">
-							<img src="assets/images/simb_logo_conj.png" alt="" title="Programa Queimadas - INPE" class="align-top"/>
+							<img src="../assets/images/simb_logo_conj.png" alt="" title="Programa Queimadas - INPE" class="align-top"/>
 							<div class="align-top">
 								<span id="portal-title-1">Programa</span>
 								<h1 id="portal-title" class="corto">Queimadas</h1>
@@ -175,7 +175,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
         <span><span id="tituloMapa">Situação Atual &gt; Focos 2 dias</span><span id="subtituloMapa">Dados gerados em <?= $lbl_hoje ?>, entre 12 UTC e 18 UTC</span></span>
     </div>
     <div id="mapa" style=""></div>
-    <img src="assets/images/legenda_focos_de_queima.png" alt="Legenda de focos de queima" title="Legenda de focos de queima" id="legenda_mapa" />
+    <img src="../assets/images/legenda_focos_de_queima.png" alt="Legenda de focos de queima" title="Legenda de focos de queima" id="legenda_mapa" />
     <div class="legenda">Atenção: os dados da camada de fumaça são apresentados com 2 dias de atraso (o mapa acima mostra a fumaça em <?= $lbl_anteontem ?>).</div>
     <div class="slider">
         <div id="slider"></div>
@@ -329,7 +329,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 			<a accesskey="0" href="#wrapper">Ir para o topo</a>
 		</div>
 		<div id="loader" class="loader">
-			<img src="assets/images/spinner.gif" alt="Carregando...">
+			<img src="../assets/images/spinner.gif" alt="Carregando...">
 		</div>
     	<div id="footer" role="contentinfo" >
 			<a name="afooter" id="afooter"></a>
