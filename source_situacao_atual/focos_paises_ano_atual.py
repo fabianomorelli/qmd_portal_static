@@ -22,15 +22,14 @@ database = get.getDatabase()
 
 engine = create_engine('postgresql://%s:%s@%s:%s/api'%(database["user"], database["password"], database["host"], database["port"]), poolclass=pool.NullPool)
 
-path_temp = os.path.join(get.returnPath(), 'tmp')
-path_img = os.path.join(get.returnPath(), 'situacao_atual/paises')
+path_saida = get.returnPath()
 
 try:
-    os.makedirs(path_temp, exist_ok=True)
+    os.makedirs(path_saida, exist_ok=True)
 except OSError as error:
     print(error)
 
-ARQUIVO_SAIDA = "%s/focos_paises_ano_atual.html"%(path_temp)
+ARQUIVO_SAIDA = "%s/focos_paises_ano_atual.html"%(path_saida)
 
 
 DATA_ATUAL = dt.datetime.now()
@@ -287,9 +286,10 @@ base.set_xlim(minx, maxx)
 base.set_ylim(miny, maxy)
 saida_mapa = ARQUIVO_SAIDA.replace(".html", "_mapa.png")
 
-saida_mapa = os.path.join(path_img, os.path.basename(saida_mapa))
+saida_mapa = os.path.join(path_saida, os.path.basename(saida_mapa))
 base.get_figure().savefig(saida_mapa)
 
+print(saida_mapa)
 
 img = os.path.basename(saida_mapa)
 #img
@@ -308,14 +308,14 @@ html = f"""
     <title></title>
 </head>
 <body style="text-align: center;">
-    <div><img src="/situacao_atual/paises/{img}" alt="{img}"></div>
+    <div><img src="/situacao_atual/{img}" alt="{img}"></div>
     <div><img src="../../images/leg_focos_paises_ano_atual.png" alt="legenda"></div>
 </body>
 </html>
 """
 
 saida_mapa_html = img.replace(".png", ".html")
-saida_mapa_html = os.path.join(path_temp, saida_mapa_html)
+saida_mapa_html = os.path.join(path_saida, saida_mapa_html)
 with open(saida_mapa_html, "w") as f:
     f.write(html)
 print(saida_mapa_html)

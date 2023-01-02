@@ -5,7 +5,7 @@
 import datetime as dt
 import os
 
-import geopandas as gpd
+#import geopandas as gpd
 import numpy as np
 import pandas as pd
 from sqlalchemy import create_engine, pool
@@ -17,7 +17,7 @@ database = get.getDatabase()
 #engine = create_engine('postgresql://queimadas:Qmd@1998@manaus.dgi.inpe.br:5432/api', poolclass=pool.NullPool)
 engine = create_engine('postgresql://%s:%s@%s:%s/api'%(database["user"], database["password"], database["host"], database["port"]), poolclass=pool.NullPool)
 
-
+print(get.returnPath())
 ARQUIVO_SAIDA = "%s/focos_paises_anual_7anos.html"%(get.returnPath())
 
 
@@ -93,7 +93,7 @@ for ano in pivot.columns[:-1]:
         else 0
     )
     saida.rename(columns={name_col: "Dif%"}, inplace=True)
-del saida.index.name
+#del saida.index.name
 saida
 
 

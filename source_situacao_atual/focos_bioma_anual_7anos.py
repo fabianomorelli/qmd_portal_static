@@ -5,7 +5,7 @@
 import datetime as dt
 import os
 
-import geopandas as gpd
+# import geopandas as gpd
 import numpy as np
 import pandas as pd
 from sqlalchemy import create_engine, pool
@@ -91,8 +91,8 @@ for ano in pivot.columns[:-1]:
         else 0
     )
     saida.rename(columns={name_col: "Dif%"}, inplace=True)
-del saida.index.name
-saida
+# del saida.index.name
+# saida
 
 
 saida.to_html(ARQUIVO_SAIDA)

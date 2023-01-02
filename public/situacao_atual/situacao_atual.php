@@ -12,7 +12,7 @@ $lbl_anteontem = date("d/m/Y",$anteontem);
 $lbl_ontem = date("d",$ontem)."/".$arr_meses[date("m",$ontem)];
 $lbl_hoje = date("d/m/Y",$ontem);
 $lbl_dia_mes = date("d/m",$ontem);
-$url_base = "../";
+$url_base = "./";
 $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 ?>
 <!DOCTYPE html>

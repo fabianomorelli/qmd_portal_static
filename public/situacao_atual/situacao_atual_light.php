@@ -28,10 +28,10 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/portal-static/situacao-atual/";
       <ul>
         <li><h3>Anual</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= "$url_base/paises/" ?>focos_paises_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= "$url_base/paises/" ?>focos_paises_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= "$url_base/paises/" ?>focos_paises_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= "$url_base/paises/" ?>focos_paises_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base ?>focos_paises_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base ?>focos_paises_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base ?>focos_paises_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base ?>focos_paises_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Mensal</h3></li>
         <ul>
