@@ -1,0 +1,20 @@
+[DATA]
+dir_files=/home/queimadas/Documentos/jade/portal-static-goes2/public
+# caminho completo do local onde os dados publicos para o apache serao gravados
+#/srv/www/public
+
+[DATABASE]
+current=DATABASE_host1
+
+
+[DATABASE_host1]
+host=xxx
+port=5432
+user=xxx
+password=xxx
+
+[DATABASE_host2]
+host=xxx
+port=5432
+user=xxx
+password=xxx
