@@ -23,7 +23,7 @@ $tempo = $_GET['temp'];
             width:80%;
             height:90%;
             min-height:500px;
-            background-image:url('./focos_<?= $unidade ?>_<?= $tempo ?>_mapa.png');
+            background-image:url('./media/focos_<?= $unidade ?>_<?= $tempo ?>_mapa.png');
         }
         #leg{
             display:block;

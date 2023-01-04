@@ -618,7 +618,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
                 if ($(id_obj).length == 0) return;
                 console.log(unidade)
                 if(id_obj)
-                $(id_obj).attr("src", tp == "mapa" ? ("<?= $url_base?>mapas.php?un="+ un + "&temp=" + tmp) : ("<?= $url_base ?>focos_" + un + "_" + tmp + label_tp + ".html?_=<?= $date ?>"));
+                $(id_obj).attr("src", tp == "mapa" ? ("<?= $url_base?>mapas.php?un="+ un + "&temp=" + tmp) : ("<?= $url_base ?>media/focos_" + un + "_" + tmp + label_tp + ".html?_=<?= $date ?>"));
             }
 
 
