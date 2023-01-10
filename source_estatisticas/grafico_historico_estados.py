@@ -65,7 +65,6 @@ for key, value in estados_dict.items():
     """
     engine.connect()
     df = pd.read_sql(sql, engine).sort_values(["ano", "mes"])
-    df.head(10)
     df.rename(columns={"ano": "Ano"}, inplace=True)
 
     months = {
@@ -118,16 +117,13 @@ for key, value in estados_dict.items():
     html = pivot_color.render().replace("nan", "-").replace("mes", "Ano")
     append = """
     <style>
-
     * {
         text-align: right;
         border: 0px;
     }
-
     body {
         margin: 0;
     }
-
     table {
         text-align: left;
         border-collapse: collapse;
@@ -143,7 +139,6 @@ for key, value in estados_dict.items():
         border: none;
         font-weight: bold;
     }
-
     table th {
         -moz-border-bottom-colors: none;
         -moz-border-left-colors: none;
@@ -157,43 +152,34 @@ for key, value in estados_dict.items():
         color: #666;
         text-align: center;
     }
-
     table tr {
         background: #f5f5f5 none repeat scroll 0 0;
         border-bottom: 1px solid #d5d5d5;
         border-right: 1px solid #d5d5d5;
     }
-
     table td, table th {
         padding: 9px;
         vertical-align: top;
     }
-
     table thead tr{
         background-color: #FDF2E3;
     }
-
     table tr {
         background: #f5f5f5 none repeat scroll 0 0;
     }
-
     table tr:last-child {
         background-color: #FFCC00 !important;
     }
-
     table tr:nth-last-child(2) {
         background-color: #FF6600 !important;
     }
-
     table tr:nth-last-child(3) {
         color: #ffffff!important;
         background-color: #CC0000 !important;
     }
-
     table th:first-child {  
       margin-left: 100px !important;
     }
-
     </style>
     """
 
@@ -203,9 +189,6 @@ for key, value in estados_dict.items():
     ) as saida:
         saida.write(html)
 
-    pivot.fillna(value=-999999, inplace=True)
-    pivot = pivot.astype(int)
-    pivot = pivot.replace(-999999, '-')
     pivot.to_csv(os.path.join(path_saida, "csv_estatisticas/historico_estado_{}.csv".format(value)))
 
-print(saida)
+    print(f"Concluído: grafico_historico_estado_{value}.html")

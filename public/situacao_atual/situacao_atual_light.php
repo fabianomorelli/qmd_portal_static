@@ -5,9 +5,11 @@ header("Pragma: no-cache");
 $ontem = time() - (24*3600);
 $date = date("mdyh");
 $lbl_ontem = date("d/m",$ontem);
-$url_base = "/situacao_atual";
+$url_base = "/public/situacao_atual";
+$url_media= "/media";
 $url_qmd = "//queimadas.dgi.inpe.br/queimadas/portal-static/situacao-atual/";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,24 +30,24 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/portal-static/situacao-atual/";
       <ul>
         <li><h3>Anual</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Mensal</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_mes_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_mes_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_mes_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_mes_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_mes_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_mes_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_mes_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_mes_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Últimas 48 horas</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_48h_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_48h_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_48h_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_paises_48h_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_48h_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_48h_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_48h_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_48h_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
       </ul>
     </ul>
@@ -55,24 +57,24 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/portal-static/situacao-atual/";
       <ul>
         <li><h3>Anual</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Mensal</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_mes_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_mes_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_mes_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_mes_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_mes_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_mes_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_mes_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_mes_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Últimas 48 horas</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_48h_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_48h_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_48h_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_estado_48h_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_48h_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_48h_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_48h_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estado_48h_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
       </ul>
     </ul>
@@ -82,24 +84,24 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/portal-static/situacao-atual/";
       <ul>
         <li><h3>Anual</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Mensal</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_mes_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_mes_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_mes_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_mes_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_mes_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_mes_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_mes_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_mes_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Últimas 48 horas</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_48h_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_48h_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_48h_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_municipio_48h_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_48h_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_48h_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_48h_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_municipio_48h_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
       </ul>
     </ul>
@@ -109,24 +111,24 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/portal-static/situacao-atual/";
       <ul>
         <li><h3>Anual</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_ano_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_ano_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_ano_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_ano_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Mensal</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_mes_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_mes_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_mes_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_mes_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_mes_atual_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_mes_atual_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_mes_atual_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_mes_atual_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
         <li><h3>Últimas 48 horas</h3></li>
         <ul>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_48h_titulo.html?_=<?= $date; ?>">Tabela</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_48h_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_48h_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
-            <li><a target="_blank" href="<?= $url_base ?>focos_bioma_48h_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_48h_titulo.html?_=<?= $date; ?>">Tabela</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_48h_pizza_titulo.html?_=<?= $date; ?>">Gráfico em pizza</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_48h_barra_titulo.html?_=<?= $date; ?>">Gráfico em colunas</a></li>
+            <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_48h_mapa_titulo.html?_=<?= $date; ?>">Mapa</a></li>
         </ul>
       </ul>
     </ul>
@@ -134,36 +136,36 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/portal-static/situacao-atual/";
     <ul>
       <li><h2>Tabela anual comparativa de países - últimos anos no intervalo de 01/01 até <?= $lbl_ontem ?></h2></li>
       <ul>
-        <li><a target="_blank" href="<?= $url_base ?>focos_paises_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
-        <li><a target="_blank" href="<?= $url_base ?>focos_paises_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_paises_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
       </ul>
     </ul>
     <ul>
       <li><h2>Tabela anual comparativa de estados do Brasil - últimos anos no intervalo de 01/01 até <?= $lbl_ontem ?></h2></li>
       <ul>
-        <li><a target="_blank" href="<?= $url_base ?>focos_estados_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
-        <li><a target="_blank" href="<?= $url_base ?>focos_estados_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estados_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_estados_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
       </ul>
     </ul>
     <ul>
       <li><h2>Tabela anual comparativa de regiões do Brasil - últimos anos no intervalo de 01/01 até <?= $lbl_ontem ?></h2></li>
       <ul>
-        <li><a target="_blank" href="<?= $url_base ?>focos_regiao_brasil_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
-        <li><a target="_blank" href="<?= $url_base ?>focos_regiao_brasil_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_regiao_brasil_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_regiao_brasil_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
       </ul>
     </ul>
     <ul>
       <li><h2>Tabela anual comparativa de regiões especiais do Brasil - últimos anos no intervalo de 01/01 até <?= $lbl_ontem ?></h2></li>
       <ul>
-        <li><a target="_blank" href="<?= $url_base ?>focos_regiao_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
-        <li><a target="_blank" href="<?= $url_base ?>focos_regiao_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_regiao_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_regiao_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
       </ul>
     </ul>
     <ul>
       <li><h2>Tabela anual comparativa de biomas do Brasil - últimos anos no intervalo de 01/01 até <?= $lbl_ontem ?></h2></li>
       <ul>
-        <li><a target="_blank" href="<?= $url_base ?>focos_bioma_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
-        <li><a target="_blank" href="<?= $url_base ?>focos_bioma_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_anual_7anos_titulo.html?_=<?= $date; ?>">Últimos anos</a></li>
+        <li><a target="_blank" href="<?= $url_base.$url_media ?>/focos_bioma_anual_estendida_titulo.html?_=<?= $date; ?>">Todos os anos</a></li>
       </ul>
     </ul>
 <!-- Global site tag (gtag.js) - Google Analytics -->

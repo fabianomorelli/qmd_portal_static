@@ -91,8 +91,7 @@ for ano in pivot.columns[:-1]:
         else 0
     )
     saida.rename(columns={name_col: "Dif%"}, inplace=True)
-#del saida.index.name
-#saida
+del saida.index.name
 
 
 # grava saida em html

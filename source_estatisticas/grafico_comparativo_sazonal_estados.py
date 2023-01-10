@@ -122,6 +122,7 @@ for key, value in estados_dict.items():
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',
@@ -174,6 +175,7 @@ for key, value in estados_dict.items():
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',
@@ -226,6 +228,7 @@ for key, value in estados_dict.items():
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',

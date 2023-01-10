@@ -92,8 +92,7 @@ for ano in pivot.columns[:-1]:
     )
     saida.rename(columns={name_col: "Dif%"}, inplace=True)
 saida.sort_values(by="estado", inplace=True)
-#del saida.index.name
-#saida
+del saida.index.name
 
 
 # grava saida em html

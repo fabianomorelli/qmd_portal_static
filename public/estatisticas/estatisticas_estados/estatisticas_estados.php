@@ -3,16 +3,21 @@ header('X-Frame-Options: GOFORIT');
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-$meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+$anteontem = time() - (2*24*3600);
 $ontem = time() - (24*3600);
-$label_date = (date("d")=='01'?$ontem:time());
-$label_mes = $meses[intval(date("m", $label_date))-1];
-$label_dias = cal_days_in_month(CAL_GREGORIAN,intval(date("m",$label_date)),intval(date("Y",$label_date)));
-$date = date("mdyh");
-$label = "01/".$label_mes." até ".$label_dias."/".$label_mes;
-$lbl_ontem = date("d/m/Y",$ontem);
-$url_base = "../";
-$url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
+$mes_ontem = date("m", $ontem);
+$ano_ontem = date("y", $ontem);
+$lbl_date = date("mdyh");
+$arr_meses = ["01"=>"Jan","02"=>"Fev","03"=>"Mar","04"=>"Abr","05"=>"Mai","06"=>"Jun","07"=>"Jul","08"=>"Ago","09"=>"Set","10"=>"Out","11"=>"Nov","12"=>"Dez"];
+$qtd_dias_mes = date("t", $ontem);
+$dt_anteontem = date("Y-m-d",$anteontem);
+$label = "01/".$arr_meses[$mes_ontem]." até ".$qtd_dias_mes."/".$arr_meses[$mes_ontem];
+$lbl_anteontem = date("d/m/Y",$anteontem);
+$lbl_ontem = date("d",$ontem)."/".$arr_meses[date("m",$ontem)];
+$lbl_hoje = date("d/m/Y",$ontem);
+$lbl_dia_mes = date("d/m",$ontem);
+$url_base = "../media/";
+$url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,11 +28,11 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
 	<meta name="title" content="Área Queimada - Programa Queimadas - INPE">
 	<meta name="robots" content="index,follow">
 	<title>Monitoramento dos Focos Ativos por Estado, Região ou Bioma - Programa Queimadas - INPE</title>
-	<link rel="stylesheet" href="../assets/css/page.min.css">
-	<link rel="stylesheet" href="../assets/css/base_plugin.css">
-    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="../assets/css/solid.min.css">
-	<link rel="stylesheet" href="../assets/jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="../../assets/css/page.min.css">
+	<link rel="stylesheet" href="../../assets/css/base_plugin.css">
+    <link rel="stylesheet" href="../../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/all.min.css">
+	<link rel="stylesheet" href="../../assets/jquery/jquery-ui.min.css">
    	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -52,10 +57,9 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
 		#tab_grafico_mes_atual>iframe{display:block;width:100%;margin-bottom:.2em;}
 		#ifr_grafico_serie_estados{display:block;margin-top:3em;}
 		#csv_historico_estados{font-size: 13px;font-weight: bold;}
-		}
 	</style>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script src="assets/js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/jquery-ui.min.js" type="text/javascript"></script>
 	<script>
 		var loaded=0,n_frames;
 		function resizeIframe(obj){try{obj.style.height = (obj.id=="ifr_grafico_mes_atual")?'100px':(obj.contentWindow.document.body.scrollHeight + 'px');}catch(e){console.log("erro:",e)}finally{loaded++;checkLoaded();}}
@@ -92,6 +96,7 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
 				<div class="container text-left align-top" id="container-logo">
 					<div id="logo" class="text-left">
 						<a title="" href="<?= $url_qmd ?>portal">
+						<img src="../../assets/images/simb_logo_conj.png" alt="logo" title="Programa Queimadas - INPE" class="align-top">
 							<div class="align-top">
 								<span id="portal-title-1">Programa</span>
 								<h1 id="portal-title" class="corto">Queimadas</h1>
@@ -218,7 +223,7 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
     </section>
 	<div id="tab_grafico_mes_atual">
 	<h5>Comparação do total de focos ativos detectados dia a dia pelo satélite de referência para a data de <?= $label ?>.</h5>
-		<iframe src="" id="ifr_grafico_mes_atual" onload="resizeIframe(this);" style="min-height:auto;"></iframe>
+		<iframe src="" id="ifr_grafico_mes_atual" onload="resizeIframe(this);" style="min-height:135px; min-width: 1077px;"></iframe>
 		<div>* Não é recomendada a comparação dos valores díarios, apenas dos totais mensais.</div>
 	</div>
 	<div id="tab_grafico">
@@ -227,7 +232,7 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
 	</div>
     <section>
         <ul id="nav_graficos" class="nav_graficos">
-            <li id="tit_menu1">Comparativo mensal</li>
+            <li id="tit_menu1">Comparativo sazonal</li>
             <li id="tit_menu3">Comparativo 1° sem.</li>
             <li id="tit_menu4">Comparativo 2° sem.</li>
         </ul>
@@ -261,7 +266,7 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
 			<a accesskey="0" href="#wrapper">Ir para o topo</a>
 		</div>
 		<div id="loader" class="loader">
-			<img src="assets/images/spinner.gif" alt="Carregando...">
+			<img src="../../assets/images/spinner.gif" alt="Carregando...">
 		</div>
 		<div id="footer" role="contentinfo" >
 			<a name="afooter" id="afooter"></a>

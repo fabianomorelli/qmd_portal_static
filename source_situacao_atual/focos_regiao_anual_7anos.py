@@ -93,9 +93,7 @@ for ano in pivot.columns[:-1]:
         else 0
     )
     saida.rename(columns={name_col: "Dif%"}, inplace=True)
-# del saida.index.name
-# saida = saida[:-1]
-# saida
+del saida.index.name
 
 
 # grava saida em html
@@ -335,4 +333,4 @@ fim = """</div></div>"""
 new_text = inicio + new_text + fim
 with open(ARQUIVO_SAIDA, "w") as f:
     f.write(new_text)
-print(ARQUIVO_SAIDA)
+print(f"{ARQUIVO_SAIDA}")

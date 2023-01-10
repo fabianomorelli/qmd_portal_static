@@ -55,7 +55,6 @@ for key, value in biomas_dict.items():
     """
     engine.connect()
     df = pd.read_sql(sql, engine).sort_values(["ano", "mes"])
-    df.head(10)
     df.rename(columns={"ano": "Ano"}, inplace=True)
 
     months = {
@@ -104,6 +103,7 @@ for key, value in biomas_dict.items():
     )
 
     del pivot_color.index.name
+
     html = pivot_color.render().replace("nan", "-").replace("mes", "Ano")
     append = """
     <style>
@@ -190,9 +190,6 @@ for key, value in biomas_dict.items():
     ) as saida:
         saida.write(html)
 
-    pivot.fillna(value=-999999, inplace=True)
-    pivot = pivot.astype(int)
-    pivot = pivot.replace(-999999, '-')
     pivot.to_csv(os.path.join(path_saida, "csv_estatisticas/historico_bioma_{}.csv".format(value)))
 
-print(saida)
+    print(f"Concluído: grafico_historico_estado_{value}.html")

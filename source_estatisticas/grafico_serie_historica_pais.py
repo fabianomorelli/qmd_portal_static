@@ -123,5 +123,4 @@ for key, value in paises_dict.items():
     ) as saida:
         saida.write(html)
 
-
-data_graficos
+    print(f"Concluído: grafico_serie_historica_estado_{value}.html")

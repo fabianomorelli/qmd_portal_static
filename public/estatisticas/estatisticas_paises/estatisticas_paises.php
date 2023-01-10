@@ -3,17 +3,17 @@ header('X-Frame-Options: GOFORIT');
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
-$meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+$anteontem = time() - (2*24*3600);
 $ontem = time() - (24*3600);
-$label_date = (date("d")=='01'?$ontem:time());
-$label_mes = $meses[intval(date("m", $label_date))-1];
-$label_dias = cal_days_in_month(CAL_GREGORIAN,intval(date("m",$label_date)),intval(date("Y",$label_date)));
 $date = date("mdyh");
-$label = "01/".$label_mes." até ".$label_dias."/".$label_mes;
-$lbl_ontem = date("d/m/Y",$ontem);
-$url_base = "../";
-$url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
-//$lbl_hoje = date("d/m/Y");
+$arr_meses = ["01"=>"Jan","02"=>"Fev","03"=>"Mar","04"=>"Abr","05"=>"Mai","06"=>"Jun","07"=>"Jul","08"=>"Ago","09"=>"Set","10"=>"Out","11"=>"Nov","12"=>"Dez"];
+$dt_anteontem = date("Y-m-d",$anteontem);
+$lbl_anteontem = date("d/m/Y",$anteontem);
+$lbl_ontem = date("d",$ontem)."/".$arr_meses[date("m",$ontem)];
+$lbl_hoje = date("d/m/Y",$ontem);
+$lbl_dia_mes = date("d/m",$ontem);
+$url_base = "../media/";
+$url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,11 +24,11 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
 	<meta name="title" content="Área Queimada - Programa Queimadas - INPE">
 	<meta name="robots" content="index,follow">
 	<title>Monitoramento dos Focos Ativos por País - Programa Queimadas - INPE</title>
-	<link rel="stylesheet" href="../assets/css/page.min.css">
-	<link rel="stylesheet" href="../assets/css/base_plugin.css">
-	<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="../assets/css/solid.min.css">
-	<link rel="stylesheet" href="../assets/jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="../../assets/css/page.min.css">
+	<link rel="stylesheet" href="../../assets/css/base_plugin.css">
+	<link rel="stylesheet" href="../../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/solid.min.css">
+	<link rel="stylesheet" href="../../assets/jquery/jquery-ui.min.css">
    	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -55,7 +55,7 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
 	#csv_historico_paises{font-size: 13px;font-weight: bold;}
 </style>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script src="assets/jquery/jquery-ui.js" type="text/javascript"></script>
+    <script src="../../assets/jquery/jquery-ui.js" type="text/javascript"></script>
 <script>
 	loaded=0;
     function checkLoaded(){
@@ -231,7 +231,7 @@ $url_qmd = "//queimadas.dgi.inpe.br/queimadas/";
 			<a accesskey="0" href="#wrapper">Ir para o topo</a>
 		</div>
 		<div id="loader" class="loader">
-			<img src="assets/images/spinner.gif" alt="Carregando...">
+			<img src="../../assets/images/spinner.gif" alt="Carregando...">
 		</div>
 <?php /*----------------------------------------------------------------------------------------------------------------------------------------------------
 		RODAPÉ DA PÁGINA 	

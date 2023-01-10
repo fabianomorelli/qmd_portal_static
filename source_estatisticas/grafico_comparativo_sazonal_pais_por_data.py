@@ -114,6 +114,7 @@ for key, value in paises_dict.items():
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',
@@ -166,6 +167,7 @@ for key, value in paises_dict.items():
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',
@@ -218,6 +220,7 @@ for key, value in paises_dict.items():
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',
@@ -246,18 +249,17 @@ for key, value in paises_dict.items():
         segundo_semestre,
         value.replace("_", " ").title(),
     )
-
-    os.mkdir(
-        "%s/graficos_data_ciman/%s/" % (path_saida, DATA_ATUAL.strftime("%Y-%m-%d"))
-    )
+    try:
+        os.mkdir(f"{path_saida}/graficos_data_ciman/{DATA_ATUAL.strftime('%Y-%m-%d')}/")
+    except FileExistsError:
+        print(f"Diretório {path_saida}/graficos_data_ciman/{DATA_ATUAL.strftime('%Y-%m-%d')} ja existe, continuando execução.")
 
     with open(
         os.path.join(
-            "%s/graficos_data_ciman/%s/"
-            % (path_saida, DATA_ATUAL.strftime("%Y-%m-%d")),
+            "%s/graficos_data_ciman/%s/" % (path_saida, DATA_ATUAL.strftime("%Y-%m-%d")),
             "grafico_comparativo_sazonal_pais_{}.html".format(value),
         ),
-        "w",
+        "w"
     ) as saida:
         saida.write(html_sazonal)
 

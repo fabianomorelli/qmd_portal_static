@@ -52,7 +52,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 	</script>
 </head>
 <body>
-	<div id="barra-identidade" ><div id="barra-brasil"><div id="wrapper-barra-brasil"><div class="brasil-flag"><a href="//brasil.gov.br" class="link-barra">Brasil</a></div><span class="acesso-info"><a href="http://www.servicos.gov.br/?pk_campaign=barrabrasil" class="link-barra" id="barra-brasil-orgao">Serviços</a></span><nav><ul id="lista-barra-brasil" class="list"><li><a href="#" id="menu-icon"></a></li><li class="list-item first"><a href="http://www.simplifique.gov.br" class="link-barra">Simplifique!</a></li><li class="list-item"><a href="http://brasil.gov.br/barra#participe" class="link-barra">Participe</a></li><li class="list-item"><a href="http://brasil.gov.br/barra#acesso-informacao" class="link-barra">Acesso à informação</a></li><li class="list-item"><a href="http://www.planalto.gov.br/legislacao" class="link-barra">Legislação</a></li><li class="list-item last last-item"><a href="http://brasil.gov.br/barra#orgaos-atuacao-canais" class="link-barra">Canais</a></li></ul></nav><span id="brasil-vlibras"><a class="logo-vlibras" href="#"></a><span class="link-vlibras"><img src="http://barra.brasil.gov.br/imagens/vlibras.gif">&nbsp;<span>O conteúdo desse portal pode ser acessível em Libras usando o <a href="http://www.vlibras.gov.br">VLibras</a></span></span></span></div></div></div>
+	<!--<div id="barra-identidade" ><div id="barra-brasil"><div id="wrapper-barra-brasil"><div class="brasil-flag"><a href="//brasil.gov.br" class="link-barra">Brasil</a></div><span class="acesso-info"><a href="http://www.servicos.gov.br/?pk_campaign=barrabrasil" class="link-barra" id="barra-brasil-orgao">Serviços</a></span><nav><ul id="lista-barra-brasil" class="list"><li><a href="#" id="menu-icon"></a></li><li class="list-item first"><a href="http://www.simplifique.gov.br" class="link-barra">Simplifique!</a></li><li class="list-item"><a href="http://brasil.gov.br/barra#participe" class="link-barra">Participe</a></li><li class="list-item"><a href="http://brasil.gov.br/barra#acesso-informacao" class="link-barra">Acesso à informação</a></li><li class="list-item"><a href="http://www.planalto.gov.br/legislacao" class="link-barra">Legislação</a></li><li class="list-item last last-item"><a href="http://brasil.gov.br/barra#orgaos-atuacao-canais" class="link-barra">Canais</a></li></ul></nav><span id="brasil-vlibras"><a class="logo-vlibras" href="#"></a><span class="link-vlibras"><img src="http://barra.brasil.gov.br/imagens/vlibras.gif">&nbsp;<span>O conteúdo desse portal pode ser acessível em Libras usando o <a href="http://www.vlibras.gov.br">VLibras</a></span></span></span></div></div></div>-->
 	<div id="wrapper">
 		<div id="header">
 			<div>
@@ -160,6 +160,13 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 <a name="anavigation" id="anavigation"></a>
 <a name="acontent" id="acontent"></a>
 <div class="content-mapa">
+    <h1>Aviso de Mudança Temporária</h1>
+    <p style="font-size:16px;">
+        Devido a falta de dados do satélite de referência, que foi colocado em modo "Stand-by" pelo centro de rastreio e controle da NASA,
+        temporáriamente a página de situação atual estará apresentando as estatísticas e comparações com dados obtidos pelo satélite 
+         <span style="background-color: #F3774F">S-NPP-375</span> em suas
+        passagens sobre a América do Sul no período da tarde após as 15hs GMT.
+    </p>
   <h1>Situação Atual</h1>
   <span class="mensagem"><a href="<?= $url_qmd ?>portal-static/situacao-atual/situacao-atual-light.php">Ir para HTML básico (para casos de lentidão no carregamento)</a></span>
 <!-- mapa -->
@@ -174,7 +181,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
         <div id="slider"></div>
     </div>
 </div>
-  <h2>Dados: Apenas Satélite de Referência - AQUA Tarde</h2>
+  <h2>Dados: Apenas do satélite <span style="background-color: #F3774F; color: #fff;">S-NPP-375 TARDE TARDE</span></h2>
   <div class="estatisticas">
 <!-- focos_pais -->
     <div id="div-focos-paises" class="estatistica">
@@ -250,7 +257,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
     <div class="comparativo">
   <!-- comparativo_pais -->
         <h2 id="titpaises">Tabela anual comparativa de países - últimos anos no intervalo de 01/Jan até <?= $lbl_ontem ?></h2> 
-        <span>* Número de focos detectados pelo satélite de referência entre 01/01 a <?= $lbl_dia_mes ?> de cada ano.</span>
+        <span>* Número de focos detectados pelo satélite <span style="background-color: #F3774F">S-NPP-375 TARDE</span> entre 01/01 a <?= $lbl_dia_mes ?> de cada ano.</span>
         <ul class="nav_graficos">
             <li title="Últimos 7 anos" onclick="changeTable('paises',null,'7anos');" class="active"><span>Últimos 7 anos</span></li>
             <li title="Todos os anos" onclick="changeTable('paises',null,'estendida');"><span>Todos os anos</span></li>
@@ -263,7 +270,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
   <!-- comparativo_estados -->
     <div class="comparativo">
         <h2 id="titestados">Tabela anual comparativa de estados do Brasil - últimos anos no intervalo de 01/Jan até <?= $lbl_ontem ?></h2>
-        <span>* Número de focos detectados pelo satélite de referência.</span>
+        <span>* Número de focos detectados pelo satélite <span style="background-color: #F3774F">S-NPP-375 TARDE</span>.</span>
         <ul class="nav_graficos">
             <li title="Últimos 7 anos" onclick="changeTable('estados',null,'7anos');" class="active"><span>Últimos 7 anos</span></li>
             <li title="Todos os anos" onclick="changeTable('estados',null,'estendida');"><span>Todos os anos</span></li>
@@ -276,7 +283,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 <!-- comparativo_regiao -->
 <div class="comparativo">
         <h2 id="titregiao">Tabela anual comparativa de regiões do Brasil - últimos anos no intervalo de 01/Jan até <?= $lbl_ontem ?></h2>
-        <span>* Número de focos detectados pelo satélite de referência.</span>
+        <span>* Número de focos detectados pelo satélite <span style="background-color: #F3774F">S-NPP-375 TARDE</span>.</span>
         <ul class="nav_graficos">
             <li title="Últimos 7 anos" onclick="changeTable('regiao_brasil',null,'7anos');" class="active"><span>Últimos 7 anos</span></li>
             <li title="Todos os anos" onclick="changeTable('regiao_brasil',null,'estendida');"><span>Todos os anos</span></li>
@@ -289,7 +296,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 <!-- comparativo_regiao_especial -->
     <div class="comparativo">
         <h2 id="titregiao">Tabela anual comparativa de regiões especiais do Brasil - últimos anos no intervalo de 01/Jan até <?= $lbl_ontem ?></h2>
-        <span>* Número de focos detectados pelo satélite de referência.</span>
+        <span>* Número de focos detectados pelo satélite <span style="background-color: #F3774F">S-NPP-375 TARDE</span>.</span>
         <ul class="nav_graficos">
             <li title="Últimos 7 anos" onclick="changeTable('regiao',null,'7anos');" class="active"><span>Últimos 7 anos</span></li>
             <li title="Todos os anos" onclick="changeTable('regiao',null,'estendida');"><span>Todos os anos</span></li>
@@ -302,7 +309,7 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 <!-- comparativo_bioma -->
     <div class="comparativo">
         <h2 id="titbioma">Tabela anual comparativa de biomas do Brasil - últimos anos no intervalo de 01/Jan até <?= $lbl_ontem ?></h2>
-        <span>* Número de focos detectados pelo satélite de referência.</span>
+        <span>* Número de focos detectados pelo satélite <span style="background-color: #F3774F">S-NPP-375 TARDE</span>.</span>
         <ul class="nav_graficos">
             <li title="Últimos 7 anos" onclick="changeTable('bioma',null,'7anos');" class="active"><span>Últimos 7 anos</span></li>
             <li title="Todos os anos" onclick="changeTable('bioma',null,'estendida');"><span>Todos os anos</span></li>
@@ -407,51 +414,172 @@ $url_qmd = "http://queimadas.dgi.inpe.br/queimadas/";
 				</div>
 			</div>
 		</div>
-	<script defer="defer" src="//barra.brasil.gov.br/barra_2.0.js" type="text/javascript"></script>
-<script type="text/javascript">
-var mapa,
-  tipo = {'regiao_brasil':'7anos','bioma':'7anos','regiao':'7anos','estados':'7anos','paises':'7anos','box-paises':'tabela','box-estado':'mapa','box-municipio':'barra','box-bioma':'pizza'},
-  tempo = {'regiao_brasil':'anual','bioma':'anual','regiao':'anual','estados':'anual','paises':'anual','box-paises':'ano_atual','box-estado':'ano_atual','box-municipio':'ano_atual','box-bioma':'ano_atual'},
-  d = new Date(),
-  mapserver = "//sirc.dgi.inpe.br/cgi-bin/mapserv?map=",
-  map_risco = mapserver+"/dados/mapfiles/riscofogo.map&",
-  map_meteorologia = mapserver+"/srv/queimadas/meteorologia/mapfiles/meteorologia.map&",
-  map_aq = mapserver+"/home/queimadas/mapserver/mapfiles/area_queimada.map&",
-  map_dsa = "http://sigma.cptec.inpe.br/cgi-bin/mapserv?map=/extra2/sigma/www/webservice/webservice_dsa.map&dt=<?= $date ?>&",
-  map_terreno = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  opcoes = {
-    attribution: '&copy; 1998 - 2019 <a target="_blank" href="<?= $url_qmd ?>">INPE - Queimadas</a>'
-  };
 
-function getTileLayer(wms,params){
-  var opt = {format:'image/png',transparent:true,crs:L.CRS.EPSG4326};
-  if(typeof params !== "undefined"){Object.assign(opt, params);}
-  return L.tileLayer.wms(wms,opt);
-}
+        <script type="text/javascript">
+            var last_dsa_image = "/oper/share/goes/goes16/goes16_web/ams_rgb_natcolor/<?= date("Y") ?>/<?= date("m") ?>/S11635399_<?= date("Ymd") ?>0010.jpg"
+            var mapa,
+                tipo = {
+                    'regiao_brasil': '7anos',
+                    'bioma': '7anos',
+                    'regiao': '7anos',
+                    'estados': '7anos',
+                    'paises': '7anos',
+                    'box-paises': 'tabela',
+                    'box-estado': 'mapa',
+                    'box-municipio': 'barra',
+                    'box-bioma': 'pizza'
+                },
+                tempo = {
+                    'regiao_brasil': 'anual',
+                    'bioma': 'anual',
+                    'regiao': 'anual',
+                    'estados': 'anual',
+                    'paises': 'anual',
+                    'box-paises': 'ano_atual',
+                    'box-estado': 'ano_atual',
+                    'box-municipio': 'ano_atual',
+                    'box-bioma': 'ano_atual'
+                },
+                d = new Date(),
+                mapserver = "//sirc.dgi.inpe.br/cgi-bin/mapserv?map=",
+                geo_terrama = "<?= $url_qmd ?>terrama2q/geoserver/ows"
+                geo_meteorologia = "<?= $url_qmd ?>firerisk/geoserver/wms"
 
-var terreno = getTileLayer(map_terreno,opcoes),
-    contornoPaises = getTileLayer(map_meteorologia,{layers:'geo_paises'}),
-    focos = getTileLayer(map_aq,{layers:'focos24h'}),
-    nuvens = getTileLayer(map_dsa,{layers:'ULT_CH13G16RGB'}),
-    fumaca = getTileLayer("<?= $url_qmd ?>terrama2q/geoserver/ows",{layers:'view72',time:"<?= $dt_anteontem ?>"}),
-    rfPrev1d = getTileLayer(map_risco, {layers:'previsao_rf_prev1d',dia:"<?=date('d')?>",mes:"<?=date('m')?>",ano:"<?=date('Y')?>",dtref:"<?=date('Ymd')?>"}),
-    nuvens_control = getTileLayer(map_dsa,{layers:'ULT_CH13G16RGB'}),
-    terreno_control = getTileLayer(map_terreno,opcoes);
+                map_bdq = "https://queimadas.dgi.inpe.br/queimadas/geoserver/wms?"
+                map_dsa = "//maps.cptec.inpe.br/mapserv?map=/oper/share/webdsa/queimadas.map&",
+                map_terreno = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                opcoes = {
+                    attribution: '&copy; <a target="_blank" href="<?= $url_qmd ?>">INPE - Queimadas</a>'
+                };
+            var terreno = getTileLayer(map_terreno, opcoes),
+                contornoPaises = getTileLayer(geo_meteorologia, {
+                    layers: 'estados',
+                    styles: 'thin_line',
+                    cql_filter: 'id_0 in (12,28,33,48,53,68,75,80,98,177,178,219,245,249)'
+                }),
+                focos = getTileLayer(map_bdq, {
+                    layers: 'bdqueimadas:focos',
+                    cql_filter: 'data_hora_gmt >= <?= $dt_ontem ?> and continente_id = 8'
+                }),
+                nuvens = "",
+                fumaca = getTileLayer(geo_terrama, {
+                    layers: 'view72',
+                    time: "<?= $dt_anteontem ?>"
+                }),
+                rfPrev1d = getTileLayer(geo_meteorologia, {
+                    layers: 'FireRisk-Forecast_T0'
+                }),
+                nuvens_control = "",
+                terreno_control = getTileLayer(map_terreno, opcoes);
 
-function getLayersSituacaoAtual(mapa) {
-  	controlLayers = L.control.layers({
-		'Nuvens': nuvens_control,
-		'Risco de Fogo': rfPrev1d,
-		'Fumaça': fumaca,
-		'Terreno': terreno_control,
-	}, {}, {collapsed:false}).addTo(mapa);
+            function get_last_dsa_image() {
+                $.getJSON('//cws.cptec.inpe.br/ws_dsa/bdi/getListByOrbGeo/G/1/5399', function(data) {})
+                    .done(function(data) {
+                        last_dsa_image = data[0].filePath;
+                    })
+                    .fail(function() {
+                        console.log("ERRO AO BUSCAR ÚLTIMA IMAGEM");
+                    })
+                    .always(function() {
+                        update_dsa_image();
+                    });
+            }
 
-	ctrl = [focos, contornoPaises,controlLayers,[nuvens,rfPrev1d,fumaca,terreno_control],terreno];
+            function update_dsa_image() {
+                nuvens = getTileLayer(map_dsa, {
+                    layers: 'img_5399',
+                    img_5399: last_dsa_image
+                });
+                nuvens_control = getTileLayer(map_dsa, {
+                    layers: 'img_5399',
+                    img_5399: last_dsa_image
+                });
+                update_map();
+            }
 
-	return ctrl;
-}
+            function update_map() {
+                mapa = L.map('mapa', {
+                    zoom: 8,
+                    minZoom: 0,
+                    center: [-15.8, -47.9],
+                    layers: [terreno, nuvens, contornoPaises, focos],
+                    fullscreenControl: true
+                }).fitBounds([
+                    [-34, -75],
+                    [5, -31]
+                ]);
 
-function changeTable(unidade, tmp, tp) {
+                mapa.on('resize', function(e) {
+                    mapa.fitBounds([
+                        [-34, -75.0],
+                        [5, -31]
+                    ]);
+                });
+                mapa.on('overlayadd', function(l) {
+                    contornoPaises.bringToFront();
+                    focos.bringToFront();
+                });
+                mapa.on('baselayerchange', function(l) {
+                    contornoPaises.bringToFront();
+                    focos.bringToFront();
+                    $("#slider").slider('value', 100);
+                });
+
+                L.control.scale().addTo(mapa);
+
+                new L.Control.GeoSearch({
+                    provider: new L.GeoSearch.Provider.OpenStreetMap()
+                }).addTo(mapa);
+                ctrl = getLayersSituacaoAtual(mapa);
+                activeLayer = ctrl[3];
+
+                rfPrev1d.addTo(mapa);
+                
+
+                $(".leaflet-left").append($("#slider").addClass("leaflet-bar leaflet-control"));
+                $("#mapa").append($("#legenda_mapa"));
+
+                $("#slider").slider({
+                    value: 100,
+                    orientation: "vertical",
+                    range: "min",
+                    animate: true,
+                    change: function(event, ui) {
+                        for (var i = 0; i < activeLayer.length; i++) {
+                            activeLayer[i].setOpacity(parseFloat(ui.value) / 100);
+                        }
+                    }
+                });
+            }
+
+            function getTileLayer(wms, params) {
+                var opt = {
+                    format: 'image/png',
+                    transparent: true,
+                    crs: L.CRS.EPSG4326
+                };
+                if (typeof params !== "undefined") {
+                    Object.assign(opt, params);
+                }
+                return L.tileLayer.wms(wms, opt);
+            }
+
+            function getLayersSituacaoAtual(mapa) {
+                controlLayers = L.control.layers({
+                    'Risco de Fogo': rfPrev1d,
+                    'Nuvens': nuvens_control,
+                    'Fumaça': fumaca,
+                    'Terreno': terreno_control,
+                }, {}, {
+                    collapsed: false
+                }).addTo(mapa);
+
+                ctrl = [focos, contornoPaises, controlLayers, [rfPrev1d, nuvens, fumaca, terreno_control], terreno];
+
+                return ctrl;
+            }
+
+            function changeTable(unidade, tmp, tp) {
                 var id_obj, un, label_tp;
 
                 if (tmp) {
@@ -491,67 +619,36 @@ function changeTable(unidade, tmp, tp) {
                 $(id_obj).attr("src", tp == "mapa" ? ("<?= $url_base?>mapas.php?un="+ un + "&temp=" + tmp) : ("<?= $url_base ?>media/focos_" + un + "_" + tmp + label_tp + ".html?_=<?= $date ?>"));
             }
 
-function updateLogo(){$('#logo img').attr("src","../assets/images/simb_logo"+($(window).width()<920?'':'_conj')+".png");}
 
-$(document).ready(function() {
-    mapa = L.map('mapa', {
-      zoom:8,
-      minZoom:0,
-      center:[-15.8, -47.9],
-      layers:[terreno,nuvens,contornoPaises,focos],
-      fullscreenControl:true
-    }).fitBounds([[-34,-75.0],[5,-31]]); 
-    
-    mapa.on('resize',function(e){mapa.fitBounds([[-34,-75.0],[5,-31]]);});
-    mapa.on('overlayadd',function(l){ contornoPaises.bringToFront();focos.bringToFront();});
-    mapa.on('baselayerchange',function(l){contornoPaises.bringToFront();focos.bringToFront();$("#slider").slider('value',100);});
+            $(document).ready(function() {
 
-    L.control.scale().addTo(mapa);
+                get_last_dsa_image();
 
-    new L.Control.GeoSearch({provider: new L.GeoSearch.Provider.OpenStreetMap()}).addTo(mapa);
+                $.each(tipo, function(k, v) {
+                    changeTable(k);
+                })
 
-    ctrl = getLayersSituacaoAtual(mapa);
-    activeLayer = ctrl[3];
-    
-    $(".leaflet-left").append($("#slider").addClass("leaflet-bar leaflet-control"));
-    $("#mapa").append($("#legenda_mapa"));
+                if ($(".topo ul").length == 0) {
+                    $(".topo").append($("#accessibility").clone());
+                }
+                $('body').on('click', '.comparativo li', function() {
+                    $(this).parent().children().removeClass("active");
+                    $(this).addClass("active");
+                })
+            });
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121460145-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-    $("#slider").slider({
-      value:100,
-      orientation:"vertical",
-      range:"min",
-      animate:true,
-      change:function(event,ui){
-        for(var i=0; i<activeLayer.length; i++){
-          activeLayer[i].setOpacity(parseFloat(ui.value)/100);
-        }
-      }
-    });
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-    $.each(tipo, function(k, v) {
-        changeTable(k);
-    })
-
-    if($(".topo ul").length == 0){
-        $(".topo").append($("#accessibility").clone());
-    }
-    
-    $('body').on('click','.comparativo li',function(){
-        $(this).parent().children().removeClass("active");
-        $(this).addClass("active");
-    })
-    updateLogo();
-});
-$(window).resize(function(){updateLogo()});
-</script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121460145-1"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'UA-121460145-1');
-	</script>
+            gtag('config', 'UA-121460145-1');
+        </script>
 </body>
+
 </html>

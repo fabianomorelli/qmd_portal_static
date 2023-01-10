@@ -157,10 +157,9 @@ function drawChart(dados, tipo, container) {
   data.addRows( %s);
 
   var options = {
-    chart: {
-      title: 'Focos de incêndio',
-      subtitle: 'Focos detectados pelo Satélite de Referência',      
-    }
+    fontSize: 12,
+    legendFontSize:12,
+    titleFontSize:14,   
   };
 
   var chart = new google.visualization.PieChart(document.getElementById("chart_paises"));
@@ -199,13 +198,12 @@ function drawChart(dados, tipo, container) {
   data.addRows( %s);
 
   var options = {
-    chart: {
-      title: 'Focos de incêndio',
-      subtitle: 'Focos detectados pelo Satélite de Referência',      
-    }
+    fontSize: 12,
+    legendFontSize:12,
+    titleFontSize:14,   
   };
 
-  var chart = new google.visualization.ColumnChart(document.getElementById("chart_paises"));
+  var chart = new google.visualization.BarChart(document.getElementById("chart_paises"));
   chart.draw(data, options);
 }
 </script>
@@ -288,7 +286,7 @@ html = f"""
   </head>
   <body style="text-align: center;">
     <div><img src="{img}" alt="{img}"></div>
-    <div><img src="http://queimadas.dgi.inpe.br/queimadas/portal-static/v_paises_focos_mensal.png" alt="legenda"></div>
+    <div><img src="../../images/v_focos_paises_mes_atual.png" alt="legenda"></div>
 </body>
   </html>
 """

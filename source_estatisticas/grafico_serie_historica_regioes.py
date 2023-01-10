@@ -127,4 +127,4 @@ for key, value in regioes_dict.items():
     ) as saida:
         saida.write(html)
 
-print(saida)
+    print(f"Concluído: grafico_serie_historica_estado_{key}.html")

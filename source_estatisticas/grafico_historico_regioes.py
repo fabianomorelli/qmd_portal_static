@@ -64,7 +64,6 @@ for key, value in regioes_dict.items():
 
     engine.connect()
     df = pd.read_sql(sql, engine).sort_values(["ano", "mes"])
-    df.head(10)
     df.rename(columns={"ano": "Ano"}, inplace=True)
 
     months = {
@@ -202,10 +201,5 @@ for key, value in regioes_dict.items():
     ) as saida:
         saida.write(html)
 
-    pivot.fillna(value=-999999, inplace=True)
-    pivot = pivot.astype(int)
-    pivot = pivot.replace(-999999, '-')
     pivot.to_csv(os.path.join(path_saida, "csv_estatisticas/historico_regiao_{}.csv".format(key)))
-
-
-saida
+    print(f"{key}\nConcluído: grafico_historico_estado_{key}.html")

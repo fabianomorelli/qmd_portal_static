@@ -13,7 +13,7 @@ def returnPath():
 	config = SafeConfigParser()
 	config_file = os.path.join(os.path.dirname(__file__),"../config.ini")
 	config.read(config_file)
-	return config.get("DATA","dir_files")
+	return config.get("DATA","dir_files_estatistica")
 
 def getDatabase():
 	config = SafeConfigParser()

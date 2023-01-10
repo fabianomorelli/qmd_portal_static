@@ -102,6 +102,7 @@ html_sazonal = (
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',
@@ -154,6 +155,7 @@ html_1_semestre = (
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',
@@ -206,6 +208,7 @@ html_2_semestre = (
 
               var options = {
                 title: '',
+              
                 vAxis: { title: 'N° Focos AQUA_M-T' },
                 hAxis: { title: 'Mês' },
                 seriesType: 'bars',

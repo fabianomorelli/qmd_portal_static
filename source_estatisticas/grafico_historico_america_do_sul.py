@@ -90,6 +90,8 @@ pivot_color = pivot.style.highlight_max(
     subset=pd.IndexSlice[pivot.index[:-4].values, pivot.columns[:-1].values],
 )
 
+del pivot_color.index.name
+
 html = pivot_color.render().replace("nan", "-").replace("mes", "Ano")
 append = """
 <style>
@@ -182,10 +184,6 @@ with open(
 ) as saida:
     saida.write(html)
 
-pivot.fillna(value=-999999, inplace=True)
-pivot = pivot.astype(int)
-pivot = pivot.replace(-999999, '-')
 pivot.to_csv(os.path.join(path_saida, "csv_estatisticas/historico_pais_america_do_sul.csv"))
 
-
-saida
+print(saida) 

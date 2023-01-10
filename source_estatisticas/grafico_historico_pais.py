@@ -64,7 +64,6 @@ for key, value in paises_dict.items():
 
     engine.connect()
     df = pd.read_sql(sql, engine).sort_values(["ano", "mes"])
-    df.head(10)
     df.rename(columns={"ano": "Ano"}, inplace=True)
 
     months = {
@@ -111,6 +110,8 @@ for key, value in paises_dict.items():
         color="#FFCC00",
         subset=pd.IndexSlice[pivot.index[:-4].values, pivot.columns[:-1].values],
     )
+
+    del pivot_color.index.name
 
     html = pivot_color.render().replace("nan", "-").replace("mes", "Ano")
     append = """
@@ -203,10 +204,8 @@ for key, value in paises_dict.items():
         os.path.join(path_saida, "grafico_historico_pais_{}.html".format(value)), "w"
     ) as saida:
         saida.write(html)
-
-    pivot.fillna(value=-999999, inplace=True)
-    pivot = pivot.astype(int)
-    pivot = pivot.replace(-999999, '-')
+    
     pivot.to_csv(os.path.join(path_saida, "csv_estatisticas/historico_pais_{}.csv".format(value)))
 
-print(saida)
+    print(f"Concluído: grafico_historico_pais_{value}.html")
+    

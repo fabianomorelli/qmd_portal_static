@@ -115,7 +115,6 @@ for key, value in estados_dict.items():
     #    and data <= '{ONTEM}'
     #group by 1,2,3
     #"""
-    
     if DIA_ATUAL > 1:
         sql = f"""
             select dias as dia, coalesce(mes, {MES_ATUAL}) mes, coalesce(ano, {ANO_ATUAL-1}) ano, coalesce(total, 0) qtd from (
@@ -213,6 +212,7 @@ for key, value in estados_dict.items():
     * {
         text-align: right;
         border: 0px;
+        min-height: auto;
     }
 
     body {
@@ -285,15 +285,6 @@ for key, value in estados_dict.items():
     html = '<head><meta charset="UTF-8"></head><center>' + html + append
     with open(os.path.join(path_saida, "grafico_historico_mes_atual_estado_{}.html".format(value)), "w") as saida:
         saida.write(html)
-
-
-# In[77]:
-
-
-print(saida)
-
-
-# In[ ]:
 
 
 

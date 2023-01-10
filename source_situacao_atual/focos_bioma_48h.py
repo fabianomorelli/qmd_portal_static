@@ -161,10 +161,9 @@ function drawChart(dados, tipo, container) {
   data.addRows( %s);
 
   var options = {
-    chart: {
-      title: 'Focos de incêndio',
-      subtitle: 'Focos detectados pelo Satélite de Referência',      
-    }
+    fontSize: 12,
+    legendFontSize:12,
+    titleFontSize:14,   
   };
 
   var chart = new google.visualization.PieChart(document.getElementById("chart_paises"));
@@ -203,13 +202,12 @@ function drawChart(dados, tipo, container) {
   data.addRows( %s);
 
   var options = {
-    chart: {
-      title: 'Focos de incêndio',
-      subtitle: 'Focos detectados pelo Satélite de Referência',      
-    }
+    fontSize: 12,
+    legendFontSize:12,
+    titleFontSize:14,   
   };
 
-  var chart = new google.visualization.ColumnChart(document.getElementById("chart_paises"));
+  var chart = new google.visualization.BarChart(document.getElementById("chart_paises"));
   chart.draw(data, options);
 }
 </script>
